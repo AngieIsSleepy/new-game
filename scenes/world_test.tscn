@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds3ivf3o0oh16"]
+
+[ext_resource type="Script" uid="uid://ci6stn7gld0wi" path="res://scenes/player.gd" id="1_7mhm3"]
+[ext_resource type="Texture2D" uid="uid://dfft177ju3811" path="res://assets/player_test/walk_test/rina-sheet.png" id="2_puv4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63fu1"]
+size = Vector2(39, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1moov"]
+atlas = ExtResource("2_puv4i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63fu1"]
+atlas = ExtResource("2_puv4i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob026"]
+atlas = ExtResource("2_puv4i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lv6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1moov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63fu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob026")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[node name="world_test" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_7mhm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(22.5, 31)
+shape = SubResource("RectangleShape2D_63fu1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(23, 32)
+sprite_frames = SubResource("SpriteFrames_4lv6h")
+animation = &"walk"
+frame_progress = 0.7370744
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 320
