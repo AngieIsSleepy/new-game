@@ -23,7 +23,7 @@ func _ready():
 func _on_start_pressed():
 	# 测试是否可以跳转
 	print("Starting test")
-	get_tree().change_scene_to_file("res://scenes/world_test.tscn")
+	get_tree().change_scene_to_file("res://scenes/laptop.tscn")
 
 
 func _on_continue_pressed():
@@ -31,7 +31,7 @@ func _on_continue_pressed():
 		return
 	print("Continuing game...")
 	# 加载存档还不知道咋写，先跳转
-	get_tree().change_scene_to_file("res://scenes/world_test.tscn")
+	get_tree().change_scene_to_file("res://scenes/laptop.tscn")
 	
 
 
