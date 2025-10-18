@@ -43,3 +43,5 @@ func _play_pptshow():
 		await get_tree().create_timer(1.0).timeout
 
 	print("放完了")
+	
+	get_tree().change_scene_to_file("res://scenes/first_meet.tscn")
