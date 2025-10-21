@@ -16,6 +16,9 @@ ss2d/version="3.3.0"
 
 config/name="newGame"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
