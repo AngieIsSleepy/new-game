@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfft177ju3811" path="res://assets/player_test/walk_test/rina-sheet.png" id="2_puv4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63fu1"]
-size = Vector2(39, 61)
+size = Vector2(36, 32.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1moov"]
 atlas = ExtResource("2_puv4i")
@@ -41,7 +41,7 @@ animations = [{
 script = ExtResource("1_7mhm3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(22.5, 31)
+position = Vector2(22, 45.25)
 shape = SubResource("RectangleShape2D_63fu1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkvi88yndnlmj"]
+
+[ext_resource type="Script" uid="uid://c8sb62bymaqoh" path="res://开头/开头重制版.gd" id="1_dbgrb"]
+[ext_resource type="Texture2D" uid="uid://dt47ofy06sius" path="res://sprite/开头示例.png" id="2_8x1nq"]
+
+[node name="开头重置版" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dbgrb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 114.0
+offset_right = 594.0
+offset_bottom = 145.0
+scale = Vector2(4, 4)
+
+[node name="play" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "开始"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 539.0
+offset_right = 148.0
+offset_bottom = 570.0
+scale = Vector2(4, 4)
+
+[node name="quit" type="Button" parent="MarginContainer2"]
+layout_mode = 2
+text = "退出"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(640, 360)
+texture = ExtResource("2_8x1nq")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="MarginContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer2/quit" to="." method="_on_quit_pressed"]

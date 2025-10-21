@@ -2,33 +2,51 @@
 
 [ext_resource type="Script" uid="uid://u14rffn6aofr" path="res://scenes/laptop/laptop.gd" id="1_creid"]
 [ext_resource type="Texture2D" uid="uid://cih4xmpdxnw4v" path="res://assets/ppt/ppt1.png" id="2_ejyiq"]
-[ext_resource type="Texture2D" uid="uid://c5vwawfpudc6c" path="res://assets/laptop_scene/laptop_scene.png" id="3_2jtcb"]
 [ext_resource type="Texture2D" uid="uid://cn1blx7uwtbl6" path="res://assets/ppt/ppt2.png" id="4_jj3px"]
 [ext_resource type="Texture2D" uid="uid://cjdtt4qponu5j" path="res://assets/ppt/ppt3.png" id="5_b8h6g"]
+[ext_resource type="Texture2D" uid="uid://qihowx73kjib" path="res://sprite/desktop.png" id="5_xc8va"]
 
 [node name="Laptop" type="Node2D"]
 script = ExtResource("1_creid")
 
 [node name="ppt1" type="Sprite2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
 texture = ExtResource("2_ejyiq")
 
 [node name="ppt2" type="Sprite2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
 texture = ExtResource("4_jj3px")
 
 [node name="ppt3" type="Sprite2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(640, 360)
+scale = Vector2(1.9999999, 1.9999999)
 texture = ExtResource("5_b8h6g")
 
 [node name="laptop_background" type="Sprite2D" parent="."]
-position = Vector2(320, 180)
-texture = ExtResource("3_2jtcb")
-
-[node name="cat_kindom_icon_button" type="Button" parent="."]
-offset_left = 105.0
-offset_top = 78.0
-offset_right = 175.0
-offset_bottom = 161.0
+position = Vector2(640, 360)
+texture = ExtResource("5_xc8va")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 140.0
+offset_top = 151.0
+offset_right = 242.0
+offset_bottom = 239.0
+
+[node name="cat_kindom_icon_button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 149.0
+offset_top = 270.0
+offset_right = 218.0
+offset_bottom = 352.0
+
+[node name="Button" type="Button" parent="MarginContainer2"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/cat_kindom_icon_button" to="." method="_on_cat_kindom_icon_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]

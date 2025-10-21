@@ -81,7 +81,7 @@ terrain_set_0/terrain_0/color = Color(0.69297236, 0.121449865, 0.26111227, 1)
 sources/2 = SubResource("TileSetAtlasSource_4c4ni")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyasq"]
-size = Vector2(39, 61)
+size = Vector2(37, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1moov"]
 atlas = ExtResource("3_on0qn")
@@ -114,6 +114,8 @@ animations = [{
 
 [node name="FirstMeet" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dbqll")
 format = 2
@@ -127,7 +129,7 @@ tile_set = SubResource("TileSet_dbqll")
 script = ExtResource("2_dbqll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(22.5, 31)
+position = Vector2(22.5, 42.5)
 shape = SubResource("RectangleShape2D_nyasq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]

@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var button = $cat_kindom_icon_button
+@onready var game_button = $MarginContainer/cat_kindom_icon_button
+@onready var note_button = $MarginContainer2/Button
 @onready var ppt = [$ppt1, $ppt2, $ppt3]
 @onready var anim = $AnimationPlayer
 
@@ -16,14 +17,17 @@ var animation_playing := false
 
 func _ready():
 	$laptop_background.set_process_input(false)
-	button.pressed.connect(_on_button_pressed)
-	button.self_modulate.a = 0  # 按钮透明但可点击
+	game_button.pressed.connect(_on_cat_kindom_icon_button_pressed)
+	game_button.self_modulate.a = 0  # 按钮透明但可点击
+	
+	note_button.pressed.connect(_on_button_pressed)
+	note_button.self_modulate.a = 0
 
 	for i in range(ppt.size()):
 		ppt[i].visible = false
 		ppt[i].z_index = 10
 		
-func _on_button_pressed():
+func _on_cat_kindom_icon_button_pressed():
 	animation_playing = true
 	print("开始播放幻灯片动画")
 	await _play_pptshow()
@@ -45,3 +49,8 @@ func _play_pptshow():
 	print("放完了")
 	
 	get_tree().change_scene_to_file("res://scenes/first_meet.tscn")
+
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://开头/desktop_notes.tscn") # Replace with function body.
