@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkvi88yndnlmj"]
+
+[ext_resource type="Script" uid="uid://c8sb62bymaqoh" path="res://scenes/开头/开始菜单.gd" id="1_hp4iu"]
+[ext_resource type="Texture2D" uid="uid://cu6e2btnsi5ew" path="res://scenes/开头/素材/button_continue.png" id="2_tvkj7"]
+[ext_resource type="Texture2D" uid="uid://dui1q04effs6s" path="res://scenes/开头/素材/button_start.png" id="3_tny50"]
+[ext_resource type="Texture2D" uid="uid://bpfxx31kjs5xc" path="res://scenes/开头/素材/button_quit.png" id="3_toyky"]
+[ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="4_pljpm"]
+[ext_resource type="Texture2D" uid="uid://2ppyx6dqg1dy" path="res://scenes/开头/素材/main_menu_background.png" id="4_tny50"]
+
+[node name="开始菜单" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hp4iu")
+
+[node name="菜单背景" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(640, 360)
+texture = ExtResource("4_tny50")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 420.0
+offset_right = 770.0
+offset_bottom = 500.0
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="startButton" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/startButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_tny50")
+
+[node name="Label" type="Label" parent="HBoxContainer/startButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.319
+offset_left = 62.0
+offset_top = 17.0
+offset_right = 118.0
+offset_bottom = 26.032
+theme_override_fonts/font = ExtResource("4_pljpm")
+theme_override_font_sizes/font_size = 28
+text = "开始"
+
+[node name="resumeButton" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/resumeButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_tvkj7")
+
+[node name="Label" type="Label" parent="HBoxContainer/resumeButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.319
+offset_left = 62.0
+offset_top = 17.0
+offset_right = 118.0
+offset_bottom = 26.032
+theme_override_fonts/font = ExtResource("4_pljpm")
+theme_override_font_sizes/font_size = 28
+text = "继续"
+
+[node name="quitButton" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/quitButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_toyky")
+
+[node name="Label" type="Label" parent="HBoxContainer/quitButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.319
+offset_left = 62.0
+offset_top = 17.0
+offset_right = 118.0
+offset_bottom = 26.032
+theme_override_fonts/font = ExtResource("4_pljpm")
+theme_override_font_sizes/font_size = 28
+text = "结束"
