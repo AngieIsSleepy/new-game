@@ -13,12 +13,12 @@ func _ready():
 
 func _on_start_pressed():
 	print("开始按钮被点击，开始游戏")
-	get_tree().change_scene_to_file("res://scenes/电脑屏幕/电脑屏幕.tscn")
+	get_tree().change_scene_to_file("res://scenes/电脑屏幕/桌面.tscn")
 
 func _on_resume_pressed():
 	print("继续游戏")
 	# 啥也没有
-	get_tree().change_scene_to_file("res://scenes/电脑屏幕/电脑屏幕.tscn")
+	get_tree().change_scene_to_file("res://scenes/电脑屏幕/桌面.tscn")
 	
 func _on_quit_pressed():
 	print("退出游戏")

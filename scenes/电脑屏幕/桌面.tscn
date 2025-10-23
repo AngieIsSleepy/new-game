@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://840r7kes2ga0"]
+
+[ext_resource type="Script" uid="uid://bnda2vq3qruxk" path="res://scenes/电脑屏幕/桌面.gd" id="1_eb8ar"]
+[ext_resource type="Texture2D" uid="uid://cih4xmpdxnw4v" path="res://scenes/过场动画/素材/ppt1.png" id="2_cbios"]
+[ext_resource type="Texture2D" uid="uid://cn1blx7uwtbl6" path="res://scenes/过场动画/素材/ppt2.png" id="3_gda3l"]
+[ext_resource type="Texture2D" uid="uid://cjdtt4qponu5j" path="res://scenes/过场动画/素材/ppt3.png" id="4_f3s2m"]
+[ext_resource type="Texture2D" uid="uid://qihowx73kjib" path="res://scenes/电脑屏幕/素材/desktop.png" id="5_3gigm"]
+[ext_resource type="Texture2D" uid="uid://dromptku1xt1a" path="res://scenes/电脑屏幕/素材/Notes.png" id="6_myr3q"]
+
+[node name="Laptop" type="Node2D"]
+script = ExtResource("1_eb8ar")
+
+[node name="ppt1" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cbios")
+
+[node name="ppt2" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("3_gda3l")
+
+[node name="ppt3" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("4_f3s2m")
+
+[node name="laptop_background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("5_3gigm")
+
+[node name="Note" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("6_myr3q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 140.0
+offset_top = 151.0
+offset_right = 242.0
+offset_bottom = 239.0
+
+[node name="cat_kindom_icon_button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 149.0
+offset_top = 270.0
+offset_right = 218.0
+offset_bottom = 352.0
+
+[node name="Button" type="Button" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_left = 1115.0
+offset_top = 105.0
+offset_right = 1150.0
+offset_bottom = 140.0
+
+[node name="关闭" type="Button" parent="MarginContainer3"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/cat_kindom_icon_button" to="." method="_on_cat_kindom_icon_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/关闭" to="." method="_on_关闭_pressed"]
