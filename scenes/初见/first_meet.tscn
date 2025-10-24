@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://bg4l5uykjso6v"]
+[gd_scene load_steps=12 format=4 uid="uid://bg4l5uykjso6v"]
 
+[ext_resource type="Script" uid="uid://do5wsk6q8ebva" path="res://scenes/初见/first_meet.gd" id="1_kj83q"]
 [ext_resource type="Texture2D" uid="uid://dyvbun7jcsemm" path="res://scenes/初见/素材/grass_tilemap.png" id="1_xu1r0"]
 [ext_resource type="Script" uid="uid://ci6stn7gld0wi" path="res://character/player_test/player.gd" id="2_kj83q"]
 [ext_resource type="Texture2D" uid="uid://dfft177ju3811" path="res://character/player_test/walk_test/rina-sheet.png" id="3_1slpd"]
@@ -113,6 +114,7 @@ animations = [{
 }]
 
 [node name="FirstMeet" type="Node2D"]
+script = ExtResource("1_kj83q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

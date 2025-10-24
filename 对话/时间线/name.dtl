@@ -1,0 +1,18 @@
+[style]
+[text_input text="猫猫勇者哟，请告诉我你的名字吧！" var="player_name"]
+[style name="红色特殊"]
+if {player_name} == "MagEhy":
+	不行哦，这是开发者的名字。
+	jump 
+elif {player_name} == "Alistair":
+	不行哦，这是开发者的名字。
+	jump 
+elif {player_name} == "猫大":
+	不行哦，这是开发者家的猫的名字。
+	jump 
+elif {player_name} == "小左":
+	不行哦，这是开发者家的猫的名字。
+	jump 
+elif {player_name} == "猫猫勇者":
+	真是个别致的名字。
+ERROR\: Tried setting non-existant variable 'player_name'.

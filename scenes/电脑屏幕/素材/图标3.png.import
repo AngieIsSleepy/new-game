@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c561ug31q5r5s"
-path="res://.godot/imported/ppt2.png-065baf389be69d0463abc36a60deddde.ctex"
+uid="uid://crfocvpb7e6vp"
+path="res://.godot/imported/图标3.png-2b47f82dc7ba093a799fd7e3b0b1090a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/过场动画/素材/ppt2.png"
-dest_files=["res://.godot/imported/ppt2.png-065baf389be69d0463abc36a60deddde.ctex"]
+source_file="res://scenes/电脑屏幕/素材/图标3.png"
+dest_files=["res://.godot/imported/图标3.png-2b47f82dc7ba093a799fd7e3b0b1090a.ctex"]
 
 [params]
 

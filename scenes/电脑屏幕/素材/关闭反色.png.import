@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c561ug31q5r5s"
-path="res://.godot/imported/ppt2.png-065baf389be69d0463abc36a60deddde.ctex"
+uid="uid://dql8f32ryosdh"
+path="res://.godot/imported/关闭反色.png-91e1ef4800e2e1e5bdce855488c4453c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/过场动画/素材/ppt2.png"
-dest_files=["res://.godot/imported/ppt2.png-065baf389be69d0463abc36a60deddde.ctex"]
+source_file="res://scenes/电脑屏幕/素材/关闭反色.png"
+dest_files=["res://.godot/imported/关闭反色.png-91e1ef4800e2e1e5bdce855488c4453c.ctex"]
 
 [params]
 

@@ -6,22 +6,29 @@ extends Node2D
 @onready var ppt = [$ppt1, $ppt2, $ppt3]
 @onready var anim = $AnimationPlayer
 @onready var note = $Note
-
+@onready var black_screen: ColorRect = $Black
 
 var current_slide := 0
 var total_slides := 3
 var animation_playing := false
-
+var player_name = ""
 
 
 func _ready():
+	game_button.disabled = false
+	note_button.disabled = false
+	close_button.disabled = true
+	black_screen.visible = false
+	close_button.disabled = true
 	$laptop_background.set_process_input(false)
 	note.self_modulate = Color(1,1,1,0)
 	
 	game_button.pressed.connect(_on_cat_kindom_icon_button_pressed)
 	game_button.self_modulate.a = 0  # 按钮透明但可点击
+	
 	note_button.pressed.connect(_on_button_pressed)
 	note_button.self_modulate.a = 0
+	
 	close_button.pressed.connect(_on_关闭_pressed)
 	close_button.self_modulate.a = 0
 
@@ -30,9 +37,13 @@ func _ready():
 		ppt[i].z_index = 10
 		
 func _on_cat_kindom_icon_button_pressed():
+	game_button.disabled = true
+	note_button.disabled = true
+	close_button.disabled = true
 	animation_playing = true
 	print("开始播放幻灯片动画")
 	await _play_pptshow()
+	
 
 
 # 播放ppt
@@ -41,23 +52,37 @@ func _play_pptshow():
 		# 隐藏上一个
 		if current_slide > 0:
 			ppt[current_slide - 1].visible = false
-
 		ppt[current_slide].visible = true
 		print("显示第 %d 张 PPT" % (current_slide + 1))
 		
 		current_slide += 1
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 
 	print("放完了")
-	
+	await _wait_for_left_click()
+	black_screen.visible = true
+	ppt[2].visible = false
+	Dialogic.start("name")
+	await Dialogic.timeline_ended
 	get_tree().change_scene_to_file("res://scenes/初见/first_meet.tscn")
 
-
+func _wait_for_left_click() -> void:
+	while true:
+		await get_tree().process_frame
+		if Input.is_action_just_pressed("left_click"):
+			return
 
 func _on_button_pressed() -> void:
 	note.self_modulate = Color(1,1,1,1)
-	#get_tree().change_scene_to_file("res://scenes/电脑屏幕/电脑屏幕.tscn") # Replace with function body.
+	close_button.disabled = false
+	note_button.disabled = true
+	game_button.disabled = true
+	
 
 
 func _on_关闭_pressed() -> void:
 	note.self_modulate = Color(1,1,1,0)
+	close_button.disabled = true
+	game_button.disabled = false
+	note_button.disabled = false
+	
