@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://d175pfqx5dr4f"]
+
+[ext_resource type="Script" uid="uid://djbv3bdno1luk" path="res://character/猫猫勇者/猫猫勇者.gd" id="1_1jjkx"]
+[ext_resource type="Texture2D" uid="uid://v4vhvxs4n45a" path="res://character/player_test/walk_test/rina.jpeg" id="2_yanby"]
+[ext_resource type="Texture2D" uid="uid://dat2x2drt7qyp" path="res://character/player_test/walk_test/rina2.jpeg" id="3_yoa1d"]
+[ext_resource type="Texture2D" uid="uid://c0yiu13b55c1q" path="res://character/player_test/walk_test/rina3.jpeg" id="4_xi1de"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai8d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yanby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yoa1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xi1de")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1l3n"]
+size = Vector2(156, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7phn"]
+size = Vector2(173, 156)
+
+[node name="猫猫勇者" type="CharacterBody2D"]
+script = ExtResource("1_1jjkx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-47.5, 47.5)
+scale = Vector2(0.62890625, 0.62890625)
+sprite_frames = SubResource("SpriteFrames_ai8d7")
+animation = &"walk"
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-46, 52)
+shape = SubResource("RectangleShape2D_r1l3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-41.5, 50)
+shape = SubResource("RectangleShape2D_c7phn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

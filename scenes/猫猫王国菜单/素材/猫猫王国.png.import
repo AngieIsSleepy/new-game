@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpb3r360rkaok"
-path="res://.godot/imported/日志图标.png-36fa277a0f8cad3c7ee45e8d8ec84909.ctex"
+uid="uid://b4t2inijq8sl0"
+path="res://.godot/imported/猫猫王国.png-7416b28d6f5396987010d2db451c925b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/电脑屏幕/素材/日志图标.png"
-dest_files=["res://.godot/imported/日志图标.png-36fa277a0f8cad3c7ee45e8d8ec84909.ctex"]
+source_file="res://scenes/猫猫王国菜单/素材/猫猫王国.png"
+dest_files=["res://.godot/imported/猫猫王国.png-7416b28d6f5396987010d2db451c925b.ctex"]
 
 [params]
 

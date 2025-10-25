@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://isx6n4dug0g2"]
+
+[ext_resource type="Script" uid="uid://b7yya2k1ab80f" path="res://character/猫大/猫大初始.gd" id="1_04sll"]
+[ext_resource type="Texture2D" uid="uid://v4vhvxs4n45a" path="res://character/player_test/walk_test/rina.jpeg" id="2_04sll"]
+[ext_resource type="Texture2D" uid="uid://dat2x2drt7qyp" path="res://character/player_test/walk_test/rina2.jpeg" id="3_6ipy0"]
+[ext_resource type="Texture2D" uid="uid://c0yiu13b55c1q" path="res://character/player_test/walk_test/rina3.jpeg" id="4_alkem"]
+[ext_resource type="Texture2D" uid="uid://8gbcwanv1hb1" path="res://character/通用素材/感叹号.png" id="5_6ipy0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h7wt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_04sll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ipy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_alkem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0y7ek"]
+size = Vector2(80, 68)
+
+[sub_resource type="Animation" id="Animation_alkem"]
+resource_name = "chat_icon"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("感叹号:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(1.1920929e-07, -61.999992), Vector2(0, -48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0y7ek"]
+_data = {
+&"chat_icon": SubResource("Animation_alkem")
+}
+
+[node name="猫大初始" type="Node2D"]
+script = ExtResource("1_04sll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.0000076, -1.9999924)
+scale = Vector2(0.21875, 0.21875)
+sprite_frames = SubResource("SpriteFrames_3h7wt")
+
+[node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_0y7ek")
+
+[node name="感叹号" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -48)
+scale = Vector2(3.4375, 2.9374998)
+texture = ExtResource("5_6ipy0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0y7ek")
+}
+autoplay = "chat_icon"

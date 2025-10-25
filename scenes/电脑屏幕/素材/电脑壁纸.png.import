@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qihowx73kjib"
-path="res://.godot/imported/desktop.png-b6b4d1f1e3f1a38d3b535efc2fdc02f8.ctex"
+uid="uid://4phvdne26g4s"
+path="res://.godot/imported/电脑壁纸.png-991c107ec3af9a4cc4728af9a66f83be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/电脑屏幕/素材/desktop.png"
-dest_files=["res://.godot/imported/desktop.png-b6b4d1f1e3f1a38d3b535efc2fdc02f8.ctex"]
+source_file="res://scenes/电脑屏幕/素材/电脑壁纸.png"
+dest_files=["res://.godot/imported/电脑壁纸.png-991c107ec3af9a4cc4728af9a66f83be.ctex"]
 
 [params]
 

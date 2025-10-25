@@ -1,72 +1,60 @@
-[gd_scene load_steps=7 format=3 uid="uid://840r7kes2ga0"]
+[gd_scene load_steps=8 format=3 uid="uid://840r7kes2ga0"]
 
 [ext_resource type="Script" uid="uid://bnda2vq3qruxk" path="res://scenes/电脑屏幕/桌面.gd" id="1_eb8ar"]
-[ext_resource type="Texture2D" uid="uid://ktpivwnwnpha" path="res://scenes/过场动画/素材/ppt1.png" id="2_cbios"]
-[ext_resource type="Texture2D" uid="uid://c561ug31q5r5s" path="res://scenes/过场动画/素材/ppt2.png" id="3_gda3l"]
-[ext_resource type="Texture2D" uid="uid://yftledn161ot" path="res://scenes/过场动画/素材/ppt3.png" id="4_f3s2m"]
-[ext_resource type="Texture2D" uid="uid://qihowx73kjib" path="res://scenes/电脑屏幕/素材/desktop.png" id="5_3gigm"]
-[ext_resource type="Texture2D" uid="uid://dromptku1xt1a" path="res://scenes/电脑屏幕/素材/Notes.png" id="6_myr3q"]
+[ext_resource type="Texture2D" uid="uid://4phvdne26g4s" path="res://scenes/电脑屏幕/素材/电脑壁纸.png" id="5_eb8ar"]
+[ext_resource type="Texture2D" uid="uid://ddesmu5041x21" path="res://scenes/电脑屏幕/素材/图标1.png" id="6_3gigm"]
+[ext_resource type="Texture2D" uid="uid://dpb3r360rkaok" path="res://scenes/电脑屏幕/素材/日志图标.png" id="7_myr3q"]
+[ext_resource type="Texture2D" uid="uid://b24wixbexrvdu" path="res://scenes/电脑屏幕/素材/日志.png" id="8_jxnl4"]
+[ext_resource type="Texture2D" uid="uid://cce73cb5nywgy" path="res://scenes/电脑屏幕/素材/关闭按钮.png" id="9_gqlcw"]
+[ext_resource type="Texture2D" uid="uid://dql8f32ryosdh" path="res://scenes/电脑屏幕/素材/关闭反色.png" id="10_sav7l"]
 
 [node name="Laptop" type="Node2D"]
 script = ExtResource("1_eb8ar")
 
-[node name="ppt1" type="Sprite2D" parent="."]
-position = Vector2(639.9999, 359.99994)
-scale = Vector2(0.6666665, 0.6666665)
-texture = ExtResource("2_cbios")
-
-[node name="ppt2" type="Sprite2D" parent="."]
-position = Vector2(640, 359.99997)
-scale = Vector2(0.6666667, 0.6666667)
-texture = ExtResource("3_gda3l")
-
-[node name="ppt3" type="Sprite2D" parent="."]
-position = Vector2(640, 359.99997)
-scale = Vector2(0.66666675, 0.6666667)
-texture = ExtResource("4_f3s2m")
-
 [node name="laptop_background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("5_3gigm")
+texture = ExtResource("5_eb8ar")
+
+[node name="猫猫王国图标" type="Sprite2D" parent="laptop_background"]
+position = Vector2(-498, -205)
+texture = ExtResource("6_3gigm")
+
+[node name="日志图标" type="Sprite2D" parent="laptop_background"]
+position = Vector2(-498, -94)
+texture = ExtResource("7_myr3q")
 
 [node name="Note" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("6_myr3q")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+texture = ExtResource("8_jxnl4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 140.0
-offset_top = 151.0
-offset_right = 242.0
-offset_bottom = 239.0
+offset_left = 97.0
+offset_top = 108.0
+offset_right = 187.0
+offset_bottom = 193.0
 
 [node name="cat_kindom_icon_button" type="Button" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-offset_left = 149.0
-offset_top = 270.0
-offset_right = 218.0
-offset_bottom = 352.0
+offset_left = 102.0
+offset_top = 227.0
+offset_right = 180.0
+offset_bottom = 304.0
 
 [node name="Button" type="Button" parent="MarginContainer2"]
 layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
-offset_left = 1115.0
-offset_top = 105.0
-offset_right = 1150.0
-offset_bottom = 140.0
+offset_left = 959.0
+offset_top = 153.0
+offset_right = 991.0
+offset_bottom = 185.0
 
-[node name="关闭" type="Button" parent="MarginContainer3"]
+[node name="关闭" type="TextureButton" parent="MarginContainer3"]
 layout_mode = 2
-
-[node name="Black" type="ColorRect" parent="."]
-visible = false
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
+texture_normal = ExtResource("9_gqlcw")
+texture_pressed = ExtResource("10_sav7l")
 
 [connection signal="pressed" from="MarginContainer/cat_kindom_icon_button" to="." method="_on_cat_kindom_icon_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]

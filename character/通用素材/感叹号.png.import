@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dromptku1xt1a"
-path="res://.godot/imported/Notes.png-f8a70c0b95c66e9a1efc28b2dd94a989.ctex"
+uid="uid://8gbcwanv1hb1"
+path="res://.godot/imported/感叹号.png-60d513ebfa6c679efa9a0afad4f558b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/电脑屏幕/素材/Notes.png"
-dest_files=["res://.godot/imported/Notes.png-f8a70c0b95c66e9a1efc28b2dd94a989.ctex"]
+source_file="res://character/通用素材/感叹号.png"
+dest_files=["res://.godot/imported/感叹号.png-60d513ebfa6c679efa9a0afad4f558b1.ctex"]
 
 [params]
 

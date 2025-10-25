@@ -28,19 +28,28 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://对话/角色/character.dch"
+"character": "res://对话/角色/character.dch",
+"小左": "res://对话/角色/小左.dch",
+"猫大": "res://对话/角色/猫大.dch"
 }
 directories/dtl_directory={
 "name": "res://对话/时间线/name.dtl",
-"初见": "res://对话/时间线/初见.dtl"
+"主菜单": "res://对话/时间线/主菜单.dtl",
+"初见": "res://对话/时间线/初见.dtl",
+"初见再次对话": "res://对话/角色/初见再次对话.dtl",
+"在桌面点击日志": "res://对话/时间线/在桌面点击日志.dtl",
+"在桌面点击游戏": "res://对话/时间线/在桌面点击游戏.dtl"
 }
 layout/style_directory={
-"": "res://对话/样式/红色特殊.tres",
+"": "res://对话/样式/New_File.tres",
 "New_File": "res://对话/样式/New_File.tres",
-"红色特殊": "res://对话/样式/红色特殊.tres"
+"主角想法": "res://对话/角色/主角想法.tres",
+"主角想法强调": "res://对话/角色/主角想法强调.tres",
+"红色特殊": "res://对话/样式/红色特殊.tres",
+"默认": "res://对话/时间线/默认.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.1
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -81,8 +90,8 @@ audio/channel_defaults={
 variables={
 "player_name": ""
 }
-layout/style_list=["res://对话/样式/红色特殊.tres", "res://对话/样式/New_File.tres"]
-layout/default_style="res://对话/样式/红色特殊.tres"
+layout/style_list=["res://对话/样式/红色特殊.tres", "res://对话/样式/New_File.tres", "res://对话/时间线/默认.tres", "res://对话/角色/主角想法.tres", "res://对话/角色/主角想法强调.tres"]
+layout/default_style="res://对话/样式/New_File.tres"
 glossary/default_case_sensitive=true
 
 [display]
@@ -94,6 +103,11 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+
+[global_group]
+
+NPC=""
+Player=""
 
 [input]
 
