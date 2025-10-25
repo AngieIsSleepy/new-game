@@ -15,4 +15,4 @@ elif {player_name} == "小左":
 	jump 
 elif {player_name} == "猫猫勇者":
 	真是个别致的名字。
-ERROR\: Tried setting non-existant variable 'player_name'.
+[speed=0.1]ERROR\: Tried setting non-existant variable 'player_name'.

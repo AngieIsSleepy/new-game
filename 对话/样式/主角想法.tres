@@ -20,14 +20,6 @@ scene = ExtResource("1_nyswq")
 script = ExtResource("2_n7gp2")
 scene = ExtResource("3_ux008")
 
-[sub_resource type="Resource" id="Resource_dojs5"]
-script = ExtResource("2_n7gp2")
-scene = ExtResource("4_oodix")
-
-[sub_resource type="Resource" id="Resource_ehlk8"]
-script = ExtResource("2_n7gp2")
-scene = ExtResource("5_mxhtl")
-
 [sub_resource type="Resource" id="Resource_3u8wl"]
 script = ExtResource("2_n7gp2")
 scene = ExtResource("6_itdeq")
@@ -36,6 +28,14 @@ overrides = {
 "text_alignment": "1",
 "typing_sounds_enabled": "false"
 }
+
+[sub_resource type="Resource" id="Resource_dojs5"]
+script = ExtResource("2_n7gp2")
+scene = ExtResource("4_oodix")
+
+[sub_resource type="Resource" id="Resource_ehlk8"]
+script = ExtResource("2_n7gp2")
+scene = ExtResource("5_mxhtl")
 
 [sub_resource type="Resource" id="Resource_gn85j"]
 script = ExtResource("2_n7gp2")
