@@ -55,10 +55,10 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai8d7"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.61,
 "texture": SubResource("AtlasTexture_c7phn")
 }, {
-"duration": 1.0,
+"duration": 1.61,
 "texture": SubResource("AtlasTexture_37jpc")
 }, {
 "duration": 1.0,
@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pnux6")
 }, {
-"duration": 1.0,
+"duration": 1.51,
 "texture": SubResource("AtlasTexture_2v02f")
 }],
 "loop": true,
@@ -116,6 +116,7 @@ position = Vector2(-7.6293945e-06, 7.6293945e-06)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai8d7")
 animation = &"stand"
+frame_progress = 0.7465026
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(42, -52)
