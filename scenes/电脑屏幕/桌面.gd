@@ -20,7 +20,7 @@ func _ready():
 #	black_screen.visible = false
 	close_button.disabled = true
 	$laptop_background.set_process_input(false)
-	note.self_modulate = Color(1,1,1,0)
+	note.visible = false
 	
 	game_button.pressed.connect(_on_cat_kindom_icon_button_pressed)
 	game_button.self_modulate.a = 0  # 按钮透明但可点击
@@ -80,7 +80,7 @@ func _wait_for_left_click() -> void:
 func _on_button_pressed() -> void:
 	log_checked = true
 	Dialogic.start("在桌面点击日志")
-	note.self_modulate = Color(1,1,1,1)
+	note.visible = true
 	close_button.self_modulate.a = 1
 	close_button.disabled = false
 	note_button.disabled = true
@@ -89,7 +89,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_关闭_pressed() -> void:
-	note.self_modulate = Color(1,1,1,0)
+	note.visible = false
 	close_button.self_modulate.a = 0
 	close_button.disabled = true
 	game_button.disabled = false

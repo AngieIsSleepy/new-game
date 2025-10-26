@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfft177ju3811"
-path="res://.godot/imported/rina-sheet.png-c2b2afed54fa5feb930af0dfcf87c152.ctex"
+uid="uid://djibme5cns4c3"
+path="res://.godot/imported/小左初始.png-04febb122b92696b0979b4670c1a38f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/player_test/walk_test/rina-sheet.png"
-dest_files=["res://.godot/imported/rina-sheet.png-c2b2afed54fa5feb930af0dfcf87c152.ctex"]
+source_file="res://character/小左/素材/小左初始.png"
+dest_files=["res://.godot/imported/小左初始.png-04febb122b92696b0979b4670c1a38f5.ctex"]
 
 [params]
 

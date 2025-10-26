@@ -7,15 +7,26 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "New_File",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "猫大初始",
 &"description": "",
 &"display_name": "猫大",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"猫大初始": {
+"export_overrides": {
+"image": "\"res://对话/角色/素材/猫大对话.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(100, -30),
+"scale": 0.2,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
 &"scale": 1.0
 }

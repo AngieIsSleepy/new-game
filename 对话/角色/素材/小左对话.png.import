@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v4vhvxs4n45a"
-path="res://.godot/imported/rina.jpeg-4ecaae98f9b4839a56b927bcd60d3f35.ctex"
+uid="uid://dvx8ml16qa3ui"
+path="res://.godot/imported/小左对话.png-fe49f5687e2af523ac3e4f3922eb19bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/player_test/walk_test/rina.jpeg"
-dest_files=["res://.godot/imported/rina.jpeg-4ecaae98f9b4839a56b927bcd60d3f35.ctex"]
+source_file="res://对话/角色/素材/小左对话.png"
+dest_files=["res://.godot/imported/小左对话.png-fe49f5687e2af523ac3e4f3922eb19bf.ctex"]
 
 [params]
 

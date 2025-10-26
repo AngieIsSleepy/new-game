@@ -7,15 +7,25 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "New_File",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "小左初始",
 &"description": "",
 &"display_name": "小左",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"小左初始": {
+"export_overrides": {
+"image": "\"res://对话/角色/素材/小左对话.png\""
+},
+"mirror": false,
+"offset": Vector2(-100, -30),
+"scale": 0.2,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
 &"scale": 1.0
 }

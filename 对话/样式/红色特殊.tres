@@ -33,6 +33,7 @@ script = ExtResource("2_lpkb8")
 scene = ExtResource("6_yjshd")
 overrides = {
 "box_animation_in": "0",
+"box_animation_out": "0",
 "next_indicator_enabled": "false",
 "text_alignment": "1",
 "text_custom_color": "Color(1, 0, 0, 1)",

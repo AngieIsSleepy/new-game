@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://840r7kes2ga0"]
+[gd_scene load_steps=10 format=3 uid="uid://840r7kes2ga0"]
 
 [ext_resource type="Script" uid="uid://bnda2vq3qruxk" path="res://scenes/电脑屏幕/桌面.gd" id="1_eb8ar"]
 [ext_resource type="Texture2D" uid="uid://4phvdne26g4s" path="res://scenes/电脑屏幕/素材/电脑壁纸.png" id="5_eb8ar"]
 [ext_resource type="Texture2D" uid="uid://ddesmu5041x21" path="res://scenes/电脑屏幕/素材/图标1.png" id="6_3gigm"]
+[ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="6_gda3l"]
 [ext_resource type="Texture2D" uid="uid://dpb3r360rkaok" path="res://scenes/电脑屏幕/素材/日志图标.png" id="7_myr3q"]
 [ext_resource type="Texture2D" uid="uid://b24wixbexrvdu" path="res://scenes/电脑屏幕/素材/日志.png" id="8_jxnl4"]
 [ext_resource type="Texture2D" uid="uid://cce73cb5nywgy" path="res://scenes/电脑屏幕/素材/关闭按钮.png" id="9_gqlcw"]
 [ext_resource type="Texture2D" uid="uid://dql8f32ryosdh" path="res://scenes/电脑屏幕/素材/关闭反色.png" id="10_sav7l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f3s2m"]
+font = ExtResource("6_gda3l")
+font_color = Color(0, 0, 0, 1)
 
 [node name="Laptop" type="Node2D"]
 script = ExtResource("1_eb8ar")
@@ -26,6 +31,19 @@ texture = ExtResource("7_myr3q")
 [node name="Note" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("8_jxnl4")
+
+[node name="Label" type="Label" parent="Note"]
+offset_left = -328.0
+offset_top = -154.0
+offset_right = 280.0
+offset_bottom = -31.0
+text = "4月12日：
+
+昨天电脑更新系统卡了好久，今天打开电脑，桌面上莫名其妙出现了一个游戏。。。
+
+难道是系统自带的吗，还是不小心下载了什么流氓软件？找个有空的时间打开看看吧。
+"
+label_settings = SubResource("LabelSettings_f3s2m")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 97.0

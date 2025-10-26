@@ -1,46 +1,46 @@
-[gd_scene load_steps=14 format=3 uid="uid://isx6n4dug0g2"]
+[gd_scene load_steps=14 format=3 uid="uid://b50umg2h31wwj"]
 
-[ext_resource type="Script" uid="uid://b7yya2k1ab80f" path="res://character/猫大/猫大初始.gd" id="1_04sll"]
-[ext_resource type="Texture2D" uid="uid://3r20senvcmdo" path="res://character/猫大/素材/猫大初始.png" id="2_bia3i"]
-[ext_resource type="Texture2D" uid="uid://8gbcwanv1hb1" path="res://character/通用素材/感叹号.png" id="5_6ipy0"]
+[ext_resource type="Script" uid="uid://cboecvgtwaloy" path="res://character/小左/小左初始.gd" id="1_ax4b8"]
+[ext_resource type="Texture2D" uid="uid://djibme5cns4c3" path="res://character/小左/素材/小左初始.png" id="2_qfbxf"]
+[ext_resource type="Texture2D" uid="uid://8gbcwanv1hb1" path="res://character/通用素材/感叹号.png" id="3_rfem1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6pea"]
-atlas = ExtResource("2_bia3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfem1"]
+atlas = ExtResource("2_qfbxf")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_04sll"]
-atlas = ExtResource("2_bia3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jmlw"]
+atlas = ExtResource("2_qfbxf")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ipy0"]
-atlas = ExtResource("2_bia3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6t8f"]
+atlas = ExtResource("2_qfbxf")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_alkem"]
-atlas = ExtResource("2_bia3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5i6i"]
+atlas = ExtResource("2_qfbxf")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3h7wt"]
-atlas = ExtResource("2_bia3i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_phr03"]
+atlas = ExtResource("2_qfbxf")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3h7wt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a6pea")
+"texture": SubResource("AtlasTexture_rfem1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_04sll")
+"texture": SubResource("AtlasTexture_1jmlw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ipy0")
+"texture": SubResource("AtlasTexture_y6t8f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_alkem")
+"texture": SubResource("AtlasTexture_l5i6i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3h7wt")
+"texture": SubResource("AtlasTexture_phr03")
 }],
 "loop": true,
 "name": &"stand",
@@ -76,14 +76,15 @@ _data = {
 radius = 13.0
 height = 28.0
 
-[node name="猫大初始" type="Node2D"]
-script = ExtResource("1_04sll")
+[node name="小左初始" type="Node2D"]
+script = ExtResource("1_ax4b8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.0000076, -1.9999924)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3h7wt")
 animation = &"stand"
+frame_progress = 0.44800252
 
 [node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
 
@@ -94,7 +95,7 @@ shape = SubResource("RectangleShape2D_0y7ek")
 visible = false
 position = Vector2(0, -48)
 scale = Vector2(3.4375, 2.9374998)
-texture = ExtResource("5_6ipy0")
+texture = ExtResource("3_rfem1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
