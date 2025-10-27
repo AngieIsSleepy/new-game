@@ -1,0 +1,6 @@
+join 猫大 right [animation="Slide From Left" wait="true" mirrored="true"]
+猫大: 这里就是你要通过的第一关了。
+猫大: 这个迷宫简直毫无头绪，到处是死路。
+猫大: 不过我们有一个能帮助你的按钮，虽然我们没办法触发，但是如果是你的话，使用它一定就可以轻松通关了。
+猫大: 我把它放在你这里了，好好使用吧。
+leave --All-- [animation="Fade Out" wait="true"]

@@ -1,0 +1,3 @@
+join 小左 left [animation="Bounce In" wait="true"]
+小左: 如果感觉过关有困难，就快按那个按钮吧！
+leave --All-- [animation="Fade Out" wait="true"]

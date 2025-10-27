@@ -101,3 +101,7 @@ func _take_hit() -> void:
 	set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
 	$"../死亡层".get_child(0).game_over()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

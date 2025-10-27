@@ -174,30 +174,34 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1l3n"]
-size = Vector2(68, 102)
+size = Vector2(63, 36)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqvj7"]
 radius = 11.0
-height = 52.0
+height = 62.0
 
 [node name="猫猫勇者" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_1jjkx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7.6293945e-06, 7.6293945e-06)
+y_sort_enabled = true
+position = Vector2(0, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai8d7")
 animation = &"hitten"
+offset = Vector2(-3.8146973e-06, -23.999996)
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(42, -52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-48, 50)
+y_sort_enabled = true
+position = Vector2(-45.5, 82)
 shape = SubResource("RectangleShape2D_r1l3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 24)
+position = Vector2(0, 24)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_xqvj7")
 

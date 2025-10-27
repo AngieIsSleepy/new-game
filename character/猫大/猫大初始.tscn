@@ -77,13 +77,15 @@ radius = 13.0
 height = 28.0
 
 [node name="猫大初始" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_04sll")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.0000076, -1.9999924)
+position = Vector2(0, 18)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3h7wt")
 animation = &"stand"
+offset = Vector2(-3.8146973e-06, -9.999996)
 
 [node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
 

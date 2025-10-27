@@ -1,0 +1,8 @@
+join 猫大 right [mirrored="true"]
+猫大: 恭喜！(鼓掌)
+leave --All--
+join 小左 left
+小左: 恭喜！(鼓掌)
+小左: 不错的开头，我就知道你可以做到的。
+小左: 拿上边上的补丁包，继续向右进入下一关吧！
+leave --All--

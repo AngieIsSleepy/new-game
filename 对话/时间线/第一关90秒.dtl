@@ -1,0 +1,4 @@
+join 小左 left [animation="Bounce In" wait="true"]
+小左: 时间可是很宝贵的，请快点拯救我们吧！
+小左: 快打开我们给你的神奇道具，肯定马上就能找到出口！
+leave --All-- [animation="Fade Out" wait="true"]
