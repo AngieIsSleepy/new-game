@@ -6,6 +6,7 @@ extends CharacterBody2D
 var talk = false
 var in_talk = false
 var last_dir := Vector2.RIGHT
+var is_hit := false
 
 func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialog_started)
@@ -21,10 +22,11 @@ func _on_dialog_ended():
 	print("对话结束，恢复移动")
 #test
 func _physics_process(_delta):
-	if in_talk:
+	if in_talk or is_hit:
 		velocity = Vector2.ZERO
 		move_and_slide()
-		_play_stand()
+		if !is_hit:
+			_play_stand()
 		return
 	var dir = Vector2.ZERO
 
@@ -79,9 +81,23 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("NPC"):
 		area.get_parent().show_chat_icon()
 		talk = true
+	if area.is_in_group("Enemy"):
+		_take_hit()
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("NPC"):
 		area.get_parent().hide_chat_icon()
 		talk = false
+		
+func _take_hit() -> void:
+	if is_hit:
+		return
+	is_hit = true
+	velocity = Vector2.ZERO
+	anim.play("hitten")
+	await anim.animation_finished
+	set_process_input(false)
+	set_physics_process(false)
+	await get_tree().create_timer(1.0).timeout
+	$"../死亡层".get_child(0).game_over()

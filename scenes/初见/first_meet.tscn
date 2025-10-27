@@ -1,113 +1,35 @@
-[gd_scene load_steps=26 format=4 uid="uid://bg4l5uykjso6v"]
+[gd_scene load_steps=17 format=4 uid="uid://bg4l5uykjso6v"]
 
 [ext_resource type="Script" uid="uid://do5wsk6q8ebva" path="res://scenes/初见/first_meet.gd" id="1_kj83q"]
 [ext_resource type="TileSet" uid="uid://bj273npgb306a" path="res://scenes/初见/deco.tres" id="4_q26pg"]
 [ext_resource type="PackedScene" uid="uid://b50umg2h31wwj" path="res://character/小左/小左初始.tscn" id="4_r2ht6"]
-[ext_resource type="Script" uid="uid://600nf26joici" path="res://scenes/初见/暂停.gd" id="5_r2ht6"]
 [ext_resource type="PackedScene" uid="uid://isx6n4dug0g2" path="res://character/猫大/猫大初始.tscn" id="5_s4ey6"]
-[ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="6_kyrly"]
 [ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="6_r2ht6"]
 [ext_resource type="TileSet" uid="uid://d4aoa24ircxc1" path="res://scenes/初见/素材/first_meet.tres" id="7_r2ht6"]
 [ext_resource type="TileSet" uid="uid://o5wmado7d1da" path="res://scenes/初见/grass.tres" id="8_kyrly"]
-[ext_resource type="Script" uid="uid://drftean23ohvr" path="res://scenes/初见/character_body_2d.gd" id="10_cokdt"]
-[ext_resource type="Texture2D" uid="uid://eptkymhskxqc" path="res://scenes/初见/素材/flower_snake.png" id="11_uslhq"]
+[ext_resource type="PackedScene" uid="uid://ihdg3wx46tlv" path="res://scenes/通用/暂停层.tscn" id="9_6ivir"]
+[ext_resource type="PackedScene" uid="uid://d3x5n4rhgtqq6" path="res://scenes/通用/死亡层.tscn" id="9_lebtj"]
+[ext_resource type="PackedScene" uid="uid://kjles08xq6jo" path="res://character/敌人/花蛇.tscn" id="10_lebtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4ey6"]
-size = Vector2(44, 824.5)
+size = Vector2(46, 1041)
 
-[sub_resource type="LabelSettings" id="LabelSettings_6ivir"]
-font = ExtResource("6_kyrly")
-font_size = 40
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q26pg"]
+size = Vector2(20, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhq4g"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cokdt"]
+b = Vector2(0, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_go838"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uslhq"]
+b = Vector2(1280, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ur67"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fhq4g"]
+a = Vector2(1280, 0)
+b = Vector2(1280, 720)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2h4o5"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6oat"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7fun"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxvv6"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0ci3"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oa2p5"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwhs2"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jt1yt"]
-atlas = ExtResource("11_uslhq")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rrpdl"]
-animations = [{
-"frames": [{
-"duration": 2.01,
-"texture": SubResource("AtlasTexture_fhq4g")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_go838")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_0ur67")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_2h4o5")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_s6oat")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_n7fun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sxvv6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0ci3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oa2p5")
-}],
-"loop": true,
-"name": &"alter",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kwhs2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jt1yt")
-}],
-"loop": true,
-"name": &"move",
-"speed": 5.0
-}]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_go838"]
+a = Vector2(0, 720)
+b = Vector2(1280, 720)
 
 [node name="FirstMeet" type="Node2D"]
 script = ExtResource("1_kj83q")
@@ -133,87 +55,53 @@ tile_set = ExtResource("4_q26pg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -21.0
-offset_top = 11.0
-offset_right = 1259.0
-offset_bottom = 731.0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(1, 1, 1, 0)
 
 [node name="Area2D" type="Area2D" parent="ColorRect"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D"]
-position = Vector2(409, 336)
+position = Vector2(887, 372)
 shape = SubResource("RectangleShape2D_s4ey6")
 
+[node name="Area2D2" type="Area2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D2"]
+position = Vector2(1280, 350)
+shape = SubResource("RectangleShape2D_q26pg")
+
 [node name="猫大初始" parent="." instance=ExtResource("5_s4ey6")]
-position = Vector2(515, 123)
+position = Vector2(1047, 251)
 
 [node name="小左初始" parent="." instance=ExtResource("4_r2ht6")]
-position = Vector2(473, 123)
+position = Vector2(971, 251)
 
 [node name="猫猫勇者" parent="." instance=ExtResource("6_r2ht6")]
-position = Vector2(310, 121)
+position = Vector2(94, 342)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 100000
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="暂停" type="Control" parent="CanvasLayer"]
-process_mode = 3
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_cokdt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_uslhq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_fhq4g")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_go838")
+
+[node name="花蛇" parent="." instance=ExtResource("10_lebtj")]
+position = Vector2(1123, 363)
+
+[node name="死亡层" parent="." instance=ExtResource("9_lebtj")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_r2ht6")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/暂停"]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.101960786, 0.101960786, 0.101960786, 0.5764706)
-
-[node name="Label" type="Label" parent="CanvasLayer/暂停"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -22.0
-offset_right = 60.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "已暂停"
-label_settings = SubResource("LabelSettings_6ivir")
-
-[node name="Button" type="Button" parent="CanvasLayer/暂停"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 45.5
-offset_right = 20.0
-offset_bottom = 76.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "继续"
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="暂停层" parent="." instance=ExtResource("9_6ivir")]
 visible = false
-script = ExtResource("10_cokdt")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(922, 328)
-sprite_frames = SubResource("SpriteFrames_rrpdl")
-animation = &"move"
-frame_progress = 0.49563277
 
 [connection signal="area_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="pressed" from="CanvasLayer/暂停/Button" to="CanvasLayer/暂停" method="_on_button_pressed"]
+[connection signal="area_entered" from="ColorRect/Area2D2" to="." method="_on_area_2d_2_area_entered"]

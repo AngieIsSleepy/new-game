@@ -109,6 +109,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.
 
 NPC=""
 Player=""
+Enemy=""
 
 [input]
 

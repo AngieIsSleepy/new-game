@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://ihdg3wx46tlv"]
+
+[ext_resource type="Script" uid="uid://qn3ili6a6o64" path="res://scenes/通用/暂停.gd" id="1_yfyos"]
+[ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="2_lct2n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgug4"]
+font = ExtResource("2_lct2n")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfyos"]
+font = ExtResource("2_lct2n")
+
+[node name="暂停层" type="CanvasLayer"]
+layer = 100000
+
+[node name="暂停" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yfyos")
+
+[node name="ColorRect" type="ColorRect" parent="暂停"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.101960786, 0.101960786, 0.101960786, 0.5764706)
+
+[node name="Label" type="Label" parent="暂停"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 560.0
+offset_top = 318.0
+offset_right = 680.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "已暂停"
+label_settings = SubResource("LabelSettings_fgug4")
+
+[node name="Button" type="Button" parent="暂停"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 600.0
+offset_top = 385.5
+offset_right = 640.0
+offset_bottom = 416.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "               "
+
+[node name="Label2" type="Label" parent="暂停"]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 412.0
+offset_right = 673.0
+offset_bottom = 435.0
+text = "回到游戏"
+label_settings = SubResource("LabelSettings_yfyos")
+
+[connection signal="pressed" from="暂停/Button" to="暂停" method="_on_button_pressed"]

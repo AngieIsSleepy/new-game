@@ -19,6 +19,7 @@ join 小左 left [animation="Fade In"]
 leave --All-- [animation="Fade Out" wait="true"]
 join 猫大 right [animation="Fade In" mirrored="true"]
 猫大: 但是开发者似乎陷入困难了，我们这个游戏只是个半成品就搁置了，虽然现在游戏能运行但是充满了bug，我们根本就寸步难行。
+猫大: 主界面和过场动画不谈，这地图里随处可见的穿模和图层错乱应该已经可以说明一切了。
 leave --All-- [animation="Fade Out" wait="true"]
 join 小左 left [animation="Fade In"]
 小左: 是的。我们是开发者做npc的时候被嵌入的AI，现在这样的情况导致我们两个只能被困在未完成的游戏世界内，这对于我们AI npc来说是非常痛苦的。

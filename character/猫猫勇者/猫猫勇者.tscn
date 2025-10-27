@@ -1,8 +1,45 @@
-[gd_scene load_steps=19 format=3 uid="uid://d175pfqx5dr4f"]
+[gd_scene load_steps=29 format=3 uid="uid://d175pfqx5dr4f"]
 
 [ext_resource type="Script" uid="uid://djbv3bdno1luk" path="res://character/猫猫勇者/猫猫勇者.gd" id="1_1jjkx"]
+[ext_resource type="Texture2D" uid="uid://dwxdxvsvmg2b4" path="res://character/猫猫勇者/素材/受击.png" id="2_1jjkx"]
 [ext_resource type="Texture2D" uid="uid://b577yiwbrhx31" path="res://character/猫猫勇者/素材/站立.png" id="2_tcme7"]
 [ext_resource type="Texture2D" uid="uid://dfqgdb87hfliv" path="res://character/猫猫勇者/素材/奔跑.png" id="2_xqvj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frw3a"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dgxe"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ko2"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcoo4"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6mvb"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nudr2"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfum5"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xlsf"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3lcv"]
+atlas = ExtResource("2_1jjkx")
+region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7phn"]
 atlas = ExtResource("2_tcme7")
@@ -55,6 +92,41 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai8d7"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frw3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dgxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ko2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcoo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6mvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nudr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfum5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xlsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3lcv")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"hitten",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.61,
 "texture": SubResource("AtlasTexture_c7phn")
 }, {
@@ -102,7 +174,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1l3n"]
-size = Vector2(112, 104)
+size = Vector2(68, 102)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqvj7"]
 radius = 11.0
@@ -115,14 +187,13 @@ script = ExtResource("1_1jjkx")
 position = Vector2(-7.6293945e-06, 7.6293945e-06)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai8d7")
-animation = &"stand"
-frame_progress = 0.7465026
+animation = &"hitten"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(42, -52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-52, 47)
+position = Vector2(-48, 50)
 shape = SubResource("RectangleShape2D_r1l3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

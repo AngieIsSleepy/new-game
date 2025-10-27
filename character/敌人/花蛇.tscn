@@ -1,0 +1,139 @@
+[gd_scene load_steps=19 format=3 uid="uid://kjles08xq6jo"]
+
+[ext_resource type="Script" uid="uid://cwyovq5i4qd13" path="res://character/敌人/花蛇.gd" id="1_su2a5"]
+[ext_resource type="Texture2D" uid="uid://eptkymhskxqc" path="res://scenes/初见/素材/flower_snake.png" id="1_ye0f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxa4a"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b67mn"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kos6"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggrbk"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axw2k"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udhqk"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shlkt"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urx4y"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erk5r"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k211f"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44i12"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4888"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20ihs"]
+atlas = ExtResource("1_ye0f6")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_robcu"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jxa4a")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_b67mn")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4kos6")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ggrbk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_axw2k")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_udhqk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_shlkt")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_urx4y")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_erk5r")
+}],
+"loop": false,
+"name": &"born",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k211f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44i12")
+}],
+"loop": true,
+"name": &"flower",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4888")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20ihs")
+}],
+"loop": true,
+"name": &"stay",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xh4u"]
+size = Vector2(42.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t30q"]
+size = Vector2(263, 225.5)
+
+[node name="花蛇" type="Node2D"]
+script = ExtResource("1_su2a5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_robcu")
+animation = &"born"
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.25, 0)
+shape = SubResource("RectangleShape2D_7xh4u")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_5t30q")
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
