@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://udptvr4rr8jp"]
+[gd_scene load_steps=30 format=3 uid="uid://udptvr4rr8jp"]
 
 [ext_resource type="Script" uid="uid://cmw7urfhbbqo7" path="res://scenes/第一关/里世界.gd" id="1_4t1ta"]
 [ext_resource type="Texture2D" uid="uid://b2yvlkak25ktr" path="res://scenes/通用/bug_world_norma.png" id="2_mxr1e"]
 [ext_resource type="Texture2D" uid="uid://yn7rwukjugpo" path="res://scenes/通用/bug_ECG.png" id="3_3nvpr"]
 [ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="3_sq41x"]
-[ext_resource type="PackedScene" uid="uid://4ubyx5r06mm" path="res://character/开发者/开发者.tscn" id="5_mxr1e"]
+[ext_resource type="Texture2D" uid="uid://is0as15whnt4" path="res://character/开发者/素材/开发者健康.png" id="5_mxr1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4sg1"]
 atlas = ExtResource("3_3nvpr")
@@ -140,6 +140,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nvpr"]
+atlas = ExtResource("5_mxr1e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1cl8"]
+atlas = ExtResource("5_mxr1e")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diyow"]
+atlas = ExtResource("5_mxr1e")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afi66"]
+atlas = ExtResource("5_mxr1e")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aab0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nvpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1cl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diyow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afi66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="里世界" type="Node2D"]
 script = ExtResource("1_4t1ta")
 
@@ -155,5 +191,9 @@ position = Vector2(641, 361)
 sprite_frames = SubResource("SpriteFrames_vovr7")
 frame_progress = 0.7403723
 
-[node name="开发者" parent="." instance=ExtResource("5_mxr1e")]
-position = Vector2(904, 319)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(911, 322)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aab0s")
+autoplay = "default"
+flip_h = true
