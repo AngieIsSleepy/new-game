@@ -9,7 +9,7 @@ func _ready():
 	for i in range(tiles.size()):
 		tiles[i].position.x = i * WIDTH
 
-func _physics_process(delta):  # ✅ 改用物理帧更稳定
+func _physics_process(delta):
 	for tile in tiles:
 		tile.position.x -= speed * delta
 

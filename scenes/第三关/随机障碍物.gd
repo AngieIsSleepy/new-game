@@ -23,10 +23,7 @@ func _process(delta: float) -> void:
 func spawn_random_obstacle() -> void:
 	if obstacle_scenes.is_empty():
 		return
-		
-		
-		
-	# 随机挑选一个障碍物场景
+	
 	var index = rng.randi_range(0, obstacle_scenes.size() - 1)
 	var scene = obstacle_scenes[index]
 
