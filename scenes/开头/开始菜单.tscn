@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bpfxx31kjs5xc" path="res://scenes/开头/素材/button_quit.png" id="3_toyky"]
 [ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="4_pljpm"]
 [ext_resource type="Texture2D" uid="uid://cok7mgoyukl0k" path="res://scenes/开头/素材/main_menu_background_.png" id="4_q1gsr"]
-[ext_resource type="Texture2D" uid="uid://s1tu42gpeo2b" path="res://scenes/开头/素材/main_menu_background_screen.png" id="4_vlpn5"]
+[ext_resource type="Texture2D" uid="uid://rjxihdtb1mty" path="res://scenes/开头/素材/主菜单背景.png" id="4_vlpn5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_di0kl"]
 shader = ExtResource("3_di0kl")

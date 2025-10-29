@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0o1sx5og7bi3"]
+
+[ext_resource type="Script" uid="uid://5wl0acgs86x1" path="res://scenes/通用/里世界3.gd" id="1_3bujx"]
+[ext_resource type="Texture2D" uid="uid://crdvwv725168f" path="res://scenes/通用/bug_world_broken2.png" id="1_bn5ed"]
+[ext_resource type="Texture2D" uid="uid://bbgeue55qkmgv" path="res://scenes/通用/线.png" id="2_3bujx"]
+[ext_resource type="PackedScene" uid="uid://4ubyx5r06mm" path="res://character/开发者/开发者.tscn" id="3_ipagc"]
+[ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="5_ipagc"]
+
+[node name="里世界3" type="Node2D"]
+script = ExtResource("1_3bujx")
+
+[node name="背景" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_bn5ed")
+
+[node name="线" type="Sprite2D" parent="背景"]
+texture = ExtResource("2_3bujx")
+
+[node name="开发者" parent="." instance=ExtResource("3_ipagc")]
+position = Vector2(924, 334)
+
+[node name="猫猫勇者" parent="." instance=ExtResource("5_ipagc")]
+position = Vector2(76, 403)

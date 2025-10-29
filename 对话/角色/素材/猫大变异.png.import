@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fyrpywnm6uw0"
-path="res://.godot/imported/bug_ECG.png-91b4267a532233694aab5adb483598c5.ctex"
+uid="uid://bdhnme3vvj740"
+path="res://.godot/imported/猫大变异.png-93665f99e7b5a551eff494cded6d8367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/第一关/素材/bug_ECG.png"
-dest_files=["res://.godot/imported/bug_ECG.png-91b4267a532233694aab5adb483598c5.ctex"]
+source_file="res://对话/角色/素材/猫大变异.png"
+dest_files=["res://.godot/imported/猫大变异.png-93665f99e7b5a551eff494cded6d8367.ctex"]
 
 [params]
 

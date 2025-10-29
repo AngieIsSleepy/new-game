@@ -26,6 +26,15 @@
 "offset": Vector2(100, -30),
 "scale": 0.2,
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"猫大变异": {
+"export_overrides": {
+"image": "\"res://对话/角色/素材/猫大变异.png\""
+},
+"mirror": false,
+"offset": Vector2(100, -30),
+"scale": 0.2,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },
 &"scale": 1.0

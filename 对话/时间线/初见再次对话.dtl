@@ -1,3 +1,3 @@
 [style]
-join 小左 left [animation="Fade In" wait="true"]
-小左: 拜托你拯救我们两个无辜的猫猫NPC了！
+join 小左 (小左初始) left [animation="Fade In" wait="true"]
+小左 (小左初始): 拜托你拯救我们两个无辜的猫猫NPC了！

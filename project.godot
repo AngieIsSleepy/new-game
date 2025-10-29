@@ -24,13 +24,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Global="*res://Global.gd"
+GameLoad="*res://game_load.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "character": "res://对话/角色/character.dch",
 "小左": "res://对话/角色/小左.dch",
-"猫大": "res://对话/角色/猫大.dch"
+"开发者": "res://对话/角色/开发者.dch",
+"猫大": "res://对话/角色/猫大.dch",
+"？？？": "res://对话/角色/？？？.dch"
 }
 directories/dtl_directory={
 "name": "res://对话/时间线/name.dtl",
@@ -38,18 +42,31 @@ directories/dtl_directory={
 "初次触发里世界": "res://对话/时间线/初次触发里世界.dtl",
 "初见": "res://对话/时间线/初见.dtl",
 "初见再次对话": "res://对话/时间线/初见再次对话.dtl",
+"图层之上": "res://对话/时间线/图层之上.dtl",
 "在桌面点击日志": "res://对话/时间线/在桌面点击日志.dtl",
 "在桌面点击游戏": "res://对话/时间线/在桌面点击游戏.dtl",
+"宝箱1打开": "res://对话/时间线/宝箱1打开.dtl",
+"宝箱2打开": "res://对话/时间线/宝箱2打开.dtl",
+"拿补丁": "res://对话/时间线/拿补丁.dtl",
 "第一关": "res://对话/时间线/第一关.dtl",
+"第一关2": "res://对话/时间线/第一关2.dtl",
 "第一关60秒": "res://对话/时间线/第一关60秒.dtl",
 "第一关90秒": "res://对话/时间线/第一关90秒.dtl",
-"第一关通过": "res://对话/时间线/第一关通过.dtl"
+"第一关不用": "res://对话/时间线/第一关不用.dtl",
+"第一关是否使用": "res://对话/时间线/第一关是否使用.dtl",
+"第一关通过": "res://对话/时间线/第一关通过.dtl",
+"第二关入场": "res://对话/时间线/第二关入场.dtl",
+"第二关按钮": "res://对话/时间线/第二关按钮.dtl",
+"里世界2": "res://对话/时间线/里世界2.dtl",
+"里世界3": "res://对话/时间线/里世界3.dtl",
+"里世界4": "res://对话/时间线/里世界4.dtl"
 }
 layout/style_directory={
 "": "res://对话/样式/New_File.tres",
 "New_File": "res://对话/样式/New_File.tres",
 "主角想法": "res://对话/样式/主角想法.tres",
 "主角想法强调": "res://对话/样式/主角想法强调.tres",
+"系统提示": "res://对话/样式/系统提示.tres",
 "红色特殊": "res://对话/样式/红色特殊.tres",
 "默认": "res://对话/样式/默认.tres"
 }
@@ -93,9 +110,10 @@ audio/channel_defaults={
 }
 }
 variables={
+"Button1": false,
 "player_name": ""
 }
-layout/style_list=["res://对话/样式/红色特殊.tres", "res://对话/样式/New_File.tres", "res://对话/样式/默认.tres", "res://对话/样式/主角想法.tres", "res://对话/样式/主角想法强调.tres"]
+layout/style_list=["res://对话/样式/红色特殊.tres", "res://对话/样式/New_File.tres", "res://对话/样式/默认.tres", "res://对话/样式/主角想法.tres", "res://对话/样式/主角想法强调.tres", "res://对话/样式/系统提示.tres"]
 layout/default_style="res://对话/样式/New_File.tres"
 glossary/default_case_sensitive=true
 text/input_action="dialogic_default_action"
@@ -115,6 +133,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/net.
 NPC=""
 Player=""
 Enemy=""
+Chest=""
 
 [input]
 

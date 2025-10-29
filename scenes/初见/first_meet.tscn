@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bg4l5uykjso6v"]
+[gd_scene load_steps=16 format=4 uid="uid://bg4l5uykjso6v"]
 
 [ext_resource type="Script" uid="uid://do5wsk6q8ebva" path="res://scenes/初见/first_meet.gd" id="1_kj83q"]
 [ext_resource type="TileSet" uid="uid://bj273npgb306a" path="res://scenes/初见/deco.tres" id="4_q26pg"]
@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://o5wmado7d1da" path="res://scenes/初见/grass.tres" id="8_kyrly"]
 [ext_resource type="PackedScene" uid="uid://ihdg3wx46tlv" path="res://scenes/通用/暂停层.tscn" id="9_6ivir"]
 [ext_resource type="PackedScene" uid="uid://d3x5n4rhgtqq6" path="res://scenes/通用/死亡层.tscn" id="9_lebtj"]
-[ext_resource type="PackedScene" uid="uid://kjles08xq6jo" path="res://character/敌人/花蛇.tscn" id="10_lebtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4ey6"]
 size = Vector2(46, 1041)
@@ -91,10 +90,6 @@ shape = SubResource("SegmentShape2D_fhq4g")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_go838")
-
-[node name="花蛇" parent="." instance=ExtResource("10_lebtj")]
-y_sort_enabled = true
-position = Vector2(1123, 363)
 
 [node name="死亡层" parent="." instance=ExtResource("9_lebtj")]
 visible = false

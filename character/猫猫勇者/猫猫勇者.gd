@@ -83,6 +83,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		talk = true
 	if area.is_in_group("Enemy"):
 		_take_hit()
+	if area.is_in_group("Chest"):
+		get_parent().get_parent().collected = true
+		area.get_parent().open()
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
@@ -101,7 +104,3 @@ func _take_hit() -> void:
 	set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
 	$"../死亡层".get_child(0).game_over()
-
-
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.

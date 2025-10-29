@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct75ldacvwiju"
-path="res://.godot/imported/bug_world_scene.png-f3fe728f909b0fe6791749f4ca40bb0c.ctex"
+uid="uid://753cefu43ebp"
+path="res://.godot/imported/小左异变.png-6987171d84fb9f5d76db69720db28e67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/第一关/素材/bug_world_scene.png"
-dest_files=["res://.godot/imported/bug_world_scene.png-f3fe728f909b0fe6791749f4ca40bb0c.ctex"]
+source_file="res://character/小左/素材/小左异变.png"
+dest_files=["res://.godot/imported/小左异变.png-6987171d84fb9f5d76db69720db28e67.ctex"]
 
 [params]
 

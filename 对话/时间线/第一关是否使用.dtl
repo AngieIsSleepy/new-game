@@ -1,0 +1,6 @@
+[style name="主角想法"]
+有点奇怪。。。要使用这个通关按钮吗？
+- 使用
+	set {Button1} = true
+- 不使用
+	set {Button1} = false

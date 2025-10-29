@@ -56,7 +56,9 @@ func _on_开始游戏_pressed() -> void:
 
 
 func _on_继续游戏_pressed() -> void:
-	pass # Replace with function body.
+	if GameLoad.load_game() == 1:
+		get_tree().change_scene_to_file(GameLoad.current_scene_path)
+		
 
 
 func _on_退出游戏_pressed() -> void:

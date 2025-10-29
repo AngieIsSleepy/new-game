@@ -47,4 +47,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://scenes/第一关/第一关.tscn")
+		_go_to_next_level()
+		
+func _go_to_next_level():
+	var next_scene = "res://scenes/第一关/第一关.tscn"
+	GameLoad.current_scene_path = next_scene
+	GameLoad.save_game()
+	get_tree().change_scene_to_file(next_scene)
