@@ -3,11 +3,27 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -500.0
 @onready var anim = $AnimatedSprite2D
 @onready var col_shape: CollisionShape2D = $shape_to_change
+var is_hit := false
 var original_size := Vector2.ZERO
 
 func _ready():
 	if col_shape.shape is RectangleShape2D:
 		original_size = col_shape.shape.size
+		
+		
+func _take_hit() -> void:
+	if is_hit:
+		return
+	Global.third_has_died = true
+	is_hit = true
+	velocity = Vector2.ZERO
+	anim.play("hitten")
+	await anim.animation_finished
+	get_tree().paused = true
+	await get_tree().create_timer(1.0).timeout
+	$"../../死亡层".get_child(0).game_over()
+	
+	
 func _physics_process(delta):
 	# gravity
 	if not is_on_floor():
