@@ -34,7 +34,7 @@ join 小左 (小左初始) left [animation="Fade In"]
 leave --All-- [animation="Fade Out" wait="true"]
 join 猫大 (猫大初始) right [animation="Fade In" mirrored="true"]
 猫大 (猫大初始): 总之，为了拯救我们两只无辜的猫猫NPC，就拜托你了！
-猫大 (猫大初始): 对了，要搜集的补丁总共有五个，分布在五个关卡内，往右边走就能进入第一关了。
+猫大 (猫大初始): 对了，要搜集的补丁总共有三个，分布在三个不同的关卡内，往右边走就能进入第一关了。
 leave --All-- [animation="Fade Out" wait="true"]
 join 小左 (小左初始) left [animation="Fade In"]
 小左 (小左初始): 虽然制作者没写，但是遇到想要交互的地方按E就可以交互了，很简单吧。

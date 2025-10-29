@@ -4,8 +4,8 @@ extends Control
 func _ready() -> void:
 	_playAnim("Logo1")
 
-func _playAnim(str:String):
-	animation_player.play(str)
+func _playAnim(s:String):
+	animation_player.play(s)
 
 func _on_animation_finished()->void:
 	get_tree().change_scene_to_file("res://scenes/开头/开始菜单.tscn")

@@ -8,8 +8,6 @@ var collected = false
 
 func _ready() -> void:
 	_fade_out($"里世界",0.0)
-	$"分层/猫猫勇者/Camera2D/里世界2".visible = false
-	#_fade_out($"分层/猫猫勇者/Camera2D/里世界2",0.0)
 	bug_button.visible = false
 	bug_swich.visible = false
 	Dialogic.start("第一关")
@@ -89,14 +87,18 @@ func _on_终点_area_entered(area: Area2D) -> void:
 		Dialogic.start("拿补丁")
 	if collected and area.is_in_group("Player"):
 		if pressed:
-			$"分层/猫猫勇者/Camera2D/里世界2".visible = true
-			Dialogic.start("里世界2")
-			await Dialogic.timeline_ended
-			$"分层/猫猫勇者/Camera2D/里世界2".visible = false
-		_go_to_next_level()
+			_go_to_next_level_with_bug()
+		else:
+			_go_to_next_level()
 
 func _go_to_next_level():
 	var next_scene = "res://scenes/第二关/第二关.tscn"
+	GameLoad.current_scene_path = next_scene
+	GameLoad.save_game()
+	get_tree().change_scene_to_file(next_scene)
+	
+func _go_to_next_level_with_bug():
+	var next_scene = "res://scenes/通用/里世界2.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
 	get_tree().change_scene_to_file(next_scene)

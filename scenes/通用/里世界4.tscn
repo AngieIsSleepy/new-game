@@ -21,3 +21,12 @@ position = Vector2(924, 334)
 
 [node name="猫猫勇者" parent="." instance=ExtResource("5_egqy8")]
 position = Vector2(81, 345)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

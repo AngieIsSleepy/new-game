@@ -1,0 +1,5 @@
+join 猫大 right [mirrored="true"]
+猫大: 勇士真是太厉害了，居然不需要依靠任何帮助。。。
+猫大: 你是不是嫌弃我们的帮助呢？
+猫大: 好过分。。。
+leave --All-- [animation="Fade Out" wait="true"]

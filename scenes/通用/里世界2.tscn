@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dt64fgd65trr3"]
+[gd_scene load_steps=29 format=3 uid="uid://dt64fgd65trr3"]
 
 [ext_resource type="Texture2D" uid="uid://caahjot5n5wtv" path="res://scenes/通用/bug_world_broken1.png" id="1_g4j0x"]
 [ext_resource type="Script" uid="uid://tek8lmpo334e" path="res://scenes/通用/里世界2.gd" id="1_pb8mj"]
@@ -140,6 +140,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mfad"]
+size = Vector2(38, 756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2jd7"]
+size = Vector2(1312, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqbtf"]
+size = Vector2(1371, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njjoa"]
+size = Vector2(37, 752.5)
+
 [node name="里世界2" type="Node2D"]
 script = ExtResource("1_pb8mj")
 
@@ -156,3 +168,30 @@ position = Vector2(908, 317)
 
 [node name="猫猫勇者" parent="." instance=ExtResource("5_8mfad")]
 position = Vector2(100, 407)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9, 368)
+shape = SubResource("RectangleShape2D_8mfad")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(646, 0)
+shape = SubResource("RectangleShape2D_s2jd7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(661, 724)
+shape = SubResource("RectangleShape2D_gqbtf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1292.5, 357.75)
+shape = SubResource("RectangleShape2D_njjoa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

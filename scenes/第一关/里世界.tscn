@@ -147,6 +147,9 @@ script = ExtResource("1_4t1ta")
 position = Vector2(640, 360)
 texture = ExtResource("2_mxr1e")
 
+[node name="猫猫勇者" parent="背景" instance=ExtResource("3_sq41x")]
+position = Vector2(-559, 49)
+
 [node name="损坏度" type="AnimatedSprite2D" parent="."]
 position = Vector2(641, 361)
 sprite_frames = SubResource("SpriteFrames_vovr7")
@@ -154,6 +157,3 @@ frame_progress = 0.7403723
 
 [node name="开发者" parent="." instance=ExtResource("5_mxr1e")]
 position = Vector2(904, 319)
-
-[node name="猫猫勇者" parent="." instance=ExtResource("3_sq41x")]
-position = Vector2(81, 409)

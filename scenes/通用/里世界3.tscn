@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0o1sx5og7bi3"]
+[gd_scene load_steps=10 format=3 uid="uid://c0o1sx5og7bi3"]
 
 [ext_resource type="Script" uid="uid://5wl0acgs86x1" path="res://scenes/通用/里世界3.gd" id="1_3bujx"]
 [ext_resource type="Texture2D" uid="uid://crdvwv725168f" path="res://scenes/通用/bug_world_broken2.png" id="1_bn5ed"]
 [ext_resource type="Texture2D" uid="uid://bbgeue55qkmgv" path="res://scenes/通用/线.png" id="2_3bujx"]
 [ext_resource type="PackedScene" uid="uid://4ubyx5r06mm" path="res://character/开发者/开发者.tscn" id="3_ipagc"]
 [ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="5_ipagc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipagc"]
+size = Vector2(38, 756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mux50"]
+size = Vector2(1312, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_621ht"]
+size = Vector2(1371, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn666"]
+size = Vector2(37, 752.5)
 
 [node name="里世界3" type="Node2D"]
 script = ExtResource("1_3bujx")
@@ -21,3 +33,30 @@ position = Vector2(924, 334)
 
 [node name="猫猫勇者" parent="." instance=ExtResource("5_ipagc")]
 position = Vector2(76, 403)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9, 368)
+shape = SubResource("RectangleShape2D_ipagc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(646, 0)
+shape = SubResource("RectangleShape2D_mux50")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(661, 724)
+shape = SubResource("RectangleShape2D_621ht")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1292.5, 357.75)
+shape = SubResource("RectangleShape2D_mn666")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

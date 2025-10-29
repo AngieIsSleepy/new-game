@@ -71,7 +71,7 @@ func _take_hit() -> void:
 	set_process_input(false)
 	set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
-	$"../死亡层".get_child(0).game_over()
+	$"../../死亡层".get_child(0).game_over()
 
 func _after_step_check():
 	var cid = _get_active_tile_color_at(global_position)
@@ -81,7 +81,7 @@ func _after_step_check():
 		_take_hit()          # 颜色不同 → 死亡
 
 func _get_active_tile_color_at(world_pos: Vector2) -> Variant:
-	var l: TileMapLayer = $"../TileMapLayer"  # ← 按你的节点路径改
+	var l: TileMapLayer = $"../../TileMapLayer"  # ← 按你的节点路径改
 	if not l.enabled:
 		return null                           # 层被禁用时不参与判定
 
@@ -97,5 +97,5 @@ func _get_active_tile_color_at(world_pos: Vector2) -> Variant:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Chest"):
-		get_parent().collected = true
+		get_parent().get_parent().collected = true
 		area.get_parent().open()

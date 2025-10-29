@@ -1,0 +1,5 @@
+join 小左 left
+小左: 呵呵哈哈哈哈哈，美妙又粗暴的胜利！
+小左: 好久没有这么痛快了！
+小左: 继续向前吧！
+leave --All-- [animation="Fade Out" wait="true"]

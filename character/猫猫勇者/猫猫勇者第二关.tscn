@@ -124,10 +124,11 @@ size = Vector2(44.5, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4he41"]
 
 [node name="猫猫勇者第二关" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_iphl3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 46)
+position = Vector2(0, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_30d0p")
 animation = &"change"
