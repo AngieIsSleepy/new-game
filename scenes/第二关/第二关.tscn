@@ -532,6 +532,7 @@ tile_map_data = PackedByteArray("AAAIABQAAQACAAIAAAAIABYAAQACAAQAAAAIABcAAQACAAU
 tile_set = SubResource("TileSet_c5umq")
 
 [node name="猫猫勇者第二关" parent="." instance=ExtResource("5_jkrln")]
+z_index = 2
 position = Vector2(-32, 332)
 
 [node name="Camera2D" type="Camera2D" parent="猫猫勇者第二关"]

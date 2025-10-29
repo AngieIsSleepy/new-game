@@ -10,7 +10,10 @@ var pressed = false
 func _ready() -> void:
 	$"猫猫勇者第二关/Camera2D/里世界3".visible = false
 	error_layer.visible = false
-	Dialogic.start("第二关入场")
+	if Global.second_has_died:
+		print("玩家死过，跳过开场对话")
+	else:
+		Dialogic.start("第二关入场")
 
 func _on_bug_swich_pressed() -> void:
 	use_bug()

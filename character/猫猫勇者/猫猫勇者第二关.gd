@@ -7,6 +7,8 @@ var state: int = 0
 var is_hit := false
 var in_talk = false
 
+
+
 func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialog_started)
 	Dialogic.timeline_ended.connect(_on_dialog_ended)
@@ -61,6 +63,7 @@ func _move_one_step(dir: Vector2) -> void:
 func _take_hit() -> void:
 	if is_hit:
 		return
+	Global.second_has_died = true
 	is_hit = true
 	velocity = Vector2.ZERO
 	anim.play("hitten")

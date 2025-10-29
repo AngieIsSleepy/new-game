@@ -14,7 +14,7 @@ ss2d/version="3.3.0"
 
 [application]
 
-config/name="newGame"
+config/name="猫未找到"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
