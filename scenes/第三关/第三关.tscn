@@ -1,3 +1,63 @@
-[gd_scene format=3 uid="uid://bpvsflx68hysy"]
+[gd_scene load_steps=12 format=3 uid="uid://bpvsflx68hysy"]
+
+[ext_resource type="Texture2D" uid="uid://dyrpa456jokyb" path="res://scenes/第三关/素材/background_running.png" id="1_3sxi7"]
+[ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="1_v6g77"]
+[ext_resource type="Script" uid="uid://b61eou7kifvsi" path="res://character/猫猫勇者/第三关猫猫勇者.gd" id="2_4jx5k"]
+[ext_resource type="Texture2D" uid="uid://5s74qk5hp6wp" path="res://scenes/第三关/素材/platform.png" id="4_3sxi7"]
+[ext_resource type="Script" uid="uid://ckyyvjt1a543h" path="res://scenes/第三关/平台.gd" id="5_7vkvc"]
+[ext_resource type="Script" uid="uid://s4g4l1qewh87" path="res://scenes/第三关/随机障碍物.gd" id="6_5rkxk"]
+[ext_resource type="PackedScene" uid="uid://s5cvqop27afv" path="res://scenes/第三关/障碍物1.tscn" id="7_3sxi7"]
+[ext_resource type="PackedScene" uid="uid://cpgpgh3lj67q7" path="res://scenes/第三关/障碍物2.tscn" id="8_7vkvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vkvc"]
+size = Vector2(49, 28)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4jx5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djrjd"]
+size = Vector2(1352, 83.99211)
 
 [node name="第三关" type="Node2D"]
+
+[node name="背景" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_3sxi7")
+
+[node name="猫猫勇者" parent="." instance=ExtResource("1_v6g77")]
+position = Vector2(51, 558)
+script = ExtResource("2_4jx5k")
+JUMP_VELOCITY = -500.0
+
+[node name="shape_to_change" type="CollisionShape2D" parent="猫猫勇者"]
+position = Vector2(20.5, -5)
+shape = SubResource("RectangleShape2D_7vkvc")
+
+[node name="平台" type="Node2D" parent="."]
+script = ExtResource("5_7vkvc")
+
+[node name="平台1" type="Sprite2D" parent="平台"]
+position = Vector2(0, 594)
+scale = Vector2(1, 1.4705882)
+texture = ExtResource("4_3sxi7")
+
+[node name="平台2" type="Sprite2D" parent="平台"]
+position = Vector2(1280, 594)
+scale = Vector2(1, 1.465)
+texture = ExtResource("4_3sxi7")
+
+[node name="平台3" type="Sprite2D" parent="平台"]
+position = Vector2(2560, 594)
+scale = Vector2(1, 1.46)
+texture = ExtResource("4_3sxi7")
+
+[node name="平台碰撞" type="StaticBody2D" parent="平台"]
+physics_material_override = SubResource("PhysicsMaterial_4jx5k")
+
+[node name="碰撞体" type="CollisionShape2D" parent="平台/平台碰撞"]
+position = Vector2(676, 657.00006)
+scale = Vector2(1, 1.4882352)
+shape = SubResource("RectangleShape2D_djrjd")
+
+[node name="随机障碍物" type="Node2D" parent="."]
+script = ExtResource("6_5rkxk")
+obstacle_scenes = Array[PackedScene]([ExtResource("7_3sxi7"), ExtResource("8_7vkvc")])

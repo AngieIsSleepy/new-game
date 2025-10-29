@@ -1,9 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://d175pfqx5dr4f"]
+[gd_scene load_steps=31 format=3 uid="uid://d175pfqx5dr4f"]
 
 [ext_resource type="Script" uid="uid://djbv3bdno1luk" path="res://character/猫猫勇者/猫猫勇者.gd" id="1_1jjkx"]
 [ext_resource type="Texture2D" uid="uid://dwxdxvsvmg2b4" path="res://character/猫猫勇者/素材/受击.png" id="2_1jjkx"]
 [ext_resource type="Texture2D" uid="uid://b577yiwbrhx31" path="res://character/猫猫勇者/素材/站立.png" id="2_tcme7"]
 [ext_resource type="Texture2D" uid="uid://dfqgdb87hfliv" path="res://character/猫猫勇者/素材/奔跑.png" id="2_xqvj7"]
+[ext_resource type="Texture2D" uid="uid://t8pifqwwcfaq" path="res://scenes/第三关/素材/player_lower-sheet.png" id="2_yanby"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxm5r"]
+atlas = ExtResource("2_yanby")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frw3a"]
 atlas = ExtResource("2_1jjkx")
@@ -91,6 +96,14 @@ region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai8d7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxm5r")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frw3a")
@@ -189,7 +202,7 @@ y_sort_enabled = true
 position = Vector2(0, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai8d7")
-animation = &"hitten"
+animation = &"duck"
 offset = Vector2(-3.8146973e-06, -23.999996)
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]

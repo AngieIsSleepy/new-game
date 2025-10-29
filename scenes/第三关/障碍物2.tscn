@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpgpgh3lj67q7"]
+
+[ext_resource type="Script" uid="uid://bjkk4qd5ecxuj" path="res://scenes/第三关/障碍物2.gd" id="1_syqys"]
+[ext_resource type="Texture2D" uid="uid://lb5oitfwq0hw" path="res://scenes/第三关/素材/block2.png" id="2_syqys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0m1oa"]
+radius = 51.156624
+
+[node name="障碍物2" type="Area2D"]
+script = ExtResource("1_syqys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.9999974, 5.499999)
+scale = Vector2(2.7, 3)
+texture = ExtResource("2_syqys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 4)
+shape = SubResource("CircleShape2D_0m1oa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
