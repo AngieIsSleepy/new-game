@@ -11,7 +11,7 @@ font_size = 40
 font = ExtResource("2_lct2n")
 
 [node name="暂停层" type="CanvasLayer"]
-layer = 100000
+layer = 10000
 
 [node name="暂停" type="Control" parent="."]
 process_mode = 3

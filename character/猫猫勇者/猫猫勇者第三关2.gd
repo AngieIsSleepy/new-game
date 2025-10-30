@@ -111,3 +111,6 @@ func _take_hit() -> void:
 	set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
 	$"../../死亡层".get_child(0).game_over()
+
+func stop_running():
+	pass

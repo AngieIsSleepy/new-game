@@ -20,7 +20,6 @@ func _ready() -> void:
 	platform.start_scroll()
 	obstacle.start_spawn()
 	player.start_running()
-	$Timer.start()
 	remaining_time = 30.0
 	_update_timer_label()
 	counting = true
@@ -67,11 +66,13 @@ func _on_bug_swich_pressed() -> void:
 
 func use_bug():
 	Global.button_count += 1
-	Dialogic.start("第三关按钮")
 	bug_swich.visible = false
 	pressed = true
 	$Timer.timeout.emit()
-	if Global.button_count == 2:
+	$Timer.stop()
+	Dialogic.start("第三关按钮")
+	await Dialogic.timeline_ended
+	if Global.button_count == 3:
 		Dialogic.start("第三关按下")
 		await Dialogic.timeline_ended
 	

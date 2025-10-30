@@ -15,11 +15,12 @@ ss2d/version="3.3.0"
 [application]
 
 config/name="猫未找到"
+run/main_scene="uid://dbowvp8womufo"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="uid://dmulkf1sn664o"
 
 [autoload]
 

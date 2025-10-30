@@ -52,4 +52,4 @@ func _go_to_next_level():
 	var next_scene = "res://scenes/第一关/第一关.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().call_deferred("change_scene_to_file", next_scene)

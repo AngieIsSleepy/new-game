@@ -55,10 +55,10 @@ func _go_to_next_level():
 	var next_scene = "res://scenes/第三关/第三关.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().call_deferred("change_scene_to_file", next_scene)
 	
 func _go_to_next_level_with_bug():
 	var next_scene = "res://scenes/通用/里世界3.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().call_deferred("change_scene_to_file", next_scene)
