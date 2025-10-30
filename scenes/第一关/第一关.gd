@@ -83,7 +83,7 @@ func use_bug():
 	Dialogic.start("图层之上")
 
 func _on_终点_area_entered(area: Area2D) -> void:
-	if !collected:
+	if !collected and area.is_in_group("Player"):
 		Dialogic.start("拿补丁")
 	if collected and area.is_in_group("Player"):
 		if pressed:

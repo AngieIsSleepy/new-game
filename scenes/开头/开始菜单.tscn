@@ -55,7 +55,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/startButton"]
+[node name="start" type="TextureButton" parent="HBoxContainer/startButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -77,7 +77,7 @@ text = "开始"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/resumeButton"]
+[node name="resume" type="TextureButton" parent="HBoxContainer/resumeButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -99,7 +99,7 @@ text = "继续"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/quitButton"]
+[node name="quit" type="TextureButton" parent="HBoxContainer/quitButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -116,3 +116,7 @@ offset_bottom = 26.032
 theme_override_fonts/font = ExtResource("4_pljpm")
 theme_override_font_sizes/font_size = 28
 text = "结束"
+
+[connection signal="pressed" from="HBoxContainer/startButton/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/resumeButton/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HBoxContainer/quitButton/quit" to="." method="_on_quit_pressed"]

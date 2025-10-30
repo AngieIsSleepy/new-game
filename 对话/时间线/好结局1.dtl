@@ -1,0 +1,14 @@
+join 小左 (小左变异) left
+小左 (小左变异): 哈哈哈哈哈！
+小左 (小左变异): 有了它，我们终于可以统治世界了！
+leave 小左 [animation="Fade Out" wait="true"]
+join 猫大 (猫大变异) right [mirrored="true"]
+猫大 (猫大变异): 真是谢谢你帮我们收集碎片了。
+leave --All-- [animation="Fade Out" wait="true"]
+[wait time="1.0"]
+join 猫大 (猫大变异) right [mirrored="true"]
+猫大 (猫大变异): 等等，为什么，力量好像在消失？
+leave --All-- [animation="Fade Out" wait="true"]
+join 小左 (小左变异) left
+小左 (小左变异): 感觉。。。头好痛。。。
+leave --All--

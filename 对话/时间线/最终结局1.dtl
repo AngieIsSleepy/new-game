@@ -1,0 +1,4 @@
+join 猫大 right [mirrored="true"]
+猫大: 太好了， 你收集到了所有碎片。
+猫大: 只要在前面那个祭坛上组装，就可以得到拯救世界的答案了！
+leave --All-- [animation="Fade Out" wait="true"]

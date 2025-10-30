@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://wmmgevllfx2m" path="res://scenes/第三关/障碍物1.gd" id="1_mu6k0"]
 [ext_resource type="Texture2D" uid="uid://cdxh7lttgr0vv" path="res://scenes/第三关/素材/block1.png" id="2_1dlww"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1dlww"]
-radius = 52.23983
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dlww"]
+radius = 32.0
+height = 90.0
 
 [node name="障碍物1" type="Area2D"]
 script = ExtResource("1_mu6k0")
@@ -16,6 +17,7 @@ texture = ExtResource("2_1dlww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, 22)
-shape = SubResource("CircleShape2D_1dlww")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1dlww")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

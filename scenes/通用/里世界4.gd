@@ -11,10 +11,16 @@ func _ready() -> void:
 	_go_to_next_level()
 
 func _go_to_next_level():
-	var next_scene = "res://scenes/第三关/第三关.tscn"
-	GameLoad.current_scene_path = next_scene
-	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
+	var next_scene1 = "res://scenes/最终场景坏/最终场景坏.tscn"
+	var next_scene2 = "res://scenes/最终场景/最终场景.tscn"
+	if Global.button_count >= 2:
+		GameLoad.current_scene_path = next_scene1
+		GameLoad.save_game()
+		get_tree().change_scene_to_file(next_scene1)
+	else:
+		GameLoad.current_scene_path = next_scene2
+		GameLoad.save_game()
+		get_tree().change_scene_to_file(next_scene2)
 
 func _flash_in(d: float = 0.5) -> void:
 	var t := create_tween()

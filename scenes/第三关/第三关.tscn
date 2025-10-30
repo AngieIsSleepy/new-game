@@ -1,52 +1,65 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpvsflx68hysy"]
+[gd_scene load_steps=23 format=3 uid="uid://bpvsflx68hysy"]
 
 [ext_resource type="Texture2D" uid="uid://dyrpa456jokyb" path="res://scenes/第三关/素材/background_running.png" id="1_3sxi7"]
-[ext_resource type="PackedScene" uid="uid://d175pfqx5dr4f" path="res://character/猫猫勇者/猫猫勇者.tscn" id="1_v6g77"]
-[ext_resource type="Script" uid="uid://b61eou7kifvsi" path="res://character/猫猫勇者/第三关猫猫勇者.gd" id="2_4jx5k"]
+[ext_resource type="Script" uid="uid://doqcnumkog1bo" path="res://scenes/第三关/第三关.gd" id="1_glj4s"]
 [ext_resource type="Texture2D" uid="uid://5s74qk5hp6wp" path="res://scenes/第三关/素材/platform.png" id="4_3sxi7"]
+[ext_resource type="PackedScene" uid="uid://cixhdkd1fg4bh" path="res://character/猫猫勇者/猫猫勇者第三关.tscn" id="4_5rkxk"]
 [ext_resource type="Script" uid="uid://ckyyvjt1a543h" path="res://scenes/第三关/平台.gd" id="5_7vkvc"]
 [ext_resource type="Script" uid="uid://s4g4l1qewh87" path="res://scenes/第三关/随机障碍物.gd" id="6_5rkxk"]
 [ext_resource type="PackedScene" uid="uid://s5cvqop27afv" path="res://scenes/第三关/障碍物1.tscn" id="7_3sxi7"]
 [ext_resource type="PackedScene" uid="uid://cpgpgh3lj67q7" path="res://scenes/第三关/障碍物2.tscn" id="8_7vkvc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vkvc"]
-size = Vector2(49, 28)
+[ext_resource type="PackedScene" uid="uid://d3x5n4rhgtqq6" path="res://scenes/通用/死亡层.tscn" id="9_glj4s"]
+[ext_resource type="PackedScene" uid="uid://ihdg3wx46tlv" path="res://scenes/通用/暂停层.tscn" id="10_cu3ys"]
+[ext_resource type="PackedScene" uid="uid://wf7xa8tlgfh" path="res://character/猫猫勇者/猫猫勇者第三关2.tscn" id="10_iped6"]
+[ext_resource type="FontFile" uid="uid://br1t1kqdhnsti" path="res://assets/font/BoutiqueBitmap9x9_1.92.ttf" id="10_r1lvg"]
+[ext_resource type="Texture2D" uid="uid://hm643vdg3p1p" path="res://assets/通用素材/王冠/bug_button_off.png" id="13_ug8dp"]
+[ext_resource type="Texture2D" uid="uid://la2ba63ibckk" path="res://assets/通用素材/王冠/bug_button_on.png" id="14_l6cmb"]
+[ext_resource type="PackedScene" uid="uid://dsddso632nlh3" path="res://character/其他/宝箱3.tscn" id="15_l6cmb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4jx5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djrjd"]
 size = Vector2(1352, 83.99211)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ug8dp"]
+font = ExtResource("10_r1lvg")
+font_size = 30
+outline_size = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iped6"]
+size = Vector2(11, 652)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1lvg"]
+size = Vector2(1317, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug8dp"]
+size = Vector2(20, 608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn1ic"]
+size = Vector2(53, 596)
+
 [node name="第三关" type="Node2D"]
+script = ExtResource("1_glj4s")
 
 [node name="背景" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("1_3sxi7")
 
-[node name="猫猫勇者" parent="." instance=ExtResource("1_v6g77")]
-position = Vector2(51, 558)
-script = ExtResource("2_4jx5k")
-JUMP_VELOCITY = -500.0
-
-[node name="shape_to_change" type="CollisionShape2D" parent="猫猫勇者"]
-position = Vector2(20.5, -5)
-shape = SubResource("RectangleShape2D_7vkvc")
-
 [node name="平台" type="Node2D" parent="."]
 script = ExtResource("5_7vkvc")
 
 [node name="平台1" type="Sprite2D" parent="平台"]
-position = Vector2(0, 594)
+position = Vector2(5, 594)
 scale = Vector2(1, 1.4705882)
 texture = ExtResource("4_3sxi7")
 
 [node name="平台2" type="Sprite2D" parent="平台"]
-position = Vector2(1280, 594)
+position = Vector2(1275, 594)
 scale = Vector2(1, 1.465)
 texture = ExtResource("4_3sxi7")
 
 [node name="平台3" type="Sprite2D" parent="平台"]
-position = Vector2(2560, 594)
+position = Vector2(2550, 594.00006)
 scale = Vector2(1, 1.46)
 texture = ExtResource("4_3sxi7")
 
@@ -61,3 +74,75 @@ shape = SubResource("RectangleShape2D_djrjd")
 [node name="随机障碍物" type="Node2D" parent="."]
 script = ExtResource("6_5rkxk")
 obstacle_scenes = Array[PackedScene]([ExtResource("7_3sxi7"), ExtResource("8_7vkvc")])
+
+[node name="死亡层" parent="." instance=ExtResource("9_glj4s")]
+visible = false
+
+[node name="暂停层" parent="." instance=ExtResource("10_cu3ys")]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="计时器" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 589.0
+offset_top = 281.5
+offset_right = 691.0
+offset_bottom = 314.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_ug8dp")
+
+[node name="分层" type="Node2D" parent="."]
+
+[node name="猫猫勇者第三关" parent="分层" instance=ExtResource("4_5rkxk")]
+position = Vector2(79, 556)
+
+[node name="猫猫勇者第三关2" parent="分层" instance=ExtResource("10_iped6")]
+position = Vector2(639, -330)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4.5, 316)
+shape = SubResource("RectangleShape2D_iped6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(648.5, 0)
+shape = SubResource("RectangleShape2D_r1lvg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1289, 292)
+shape = SubResource("RectangleShape2D_ug8dp")
+
+[node name="bug_swich" type="TextureButton" parent="."]
+z_index = 10
+offset_left = 45.0
+offset_top = 602.0
+offset_right = 109.0
+offset_bottom = 666.0
+scale = Vector2(1.765, 1.765)
+toggle_mode = true
+texture_normal = ExtResource("13_ug8dp")
+texture_pressed = ExtResource("14_l6cmb")
+
+[node name="宝箱3" parent="." instance=ExtResource("15_l6cmb")]
+position = Vector2(982, 602)
+
+[node name="终点" type="Area2D" parent="."]
+position = Vector2(555, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="终点"]
+position = Vector2(639, 304)
+shape = SubResource("RectangleShape2D_pn1ic")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="bug_swich" to="." method="_on_bug_swich_pressed"]
+[connection signal="area_entered" from="终点" to="." method="_on_终点_area_entered"]

@@ -86,15 +86,6 @@ A   S   D
 用wasd移动吧"
 label_settings = SubResource("LabelSettings_q26pg")
 
-[node name="猫大初始" parent="." instance=ExtResource("5_s4ey6")]
-position = Vector2(1045, 251)
-
-[node name="小左初始" parent="." instance=ExtResource("4_r2ht6")]
-position = Vector2(971, 251)
-
-[node name="猫猫勇者" parent="." instance=ExtResource("6_r2ht6")]
-position = Vector2(94, 342)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -114,6 +105,18 @@ visible = false
 
 [node name="暂停层" parent="." instance=ExtResource("9_6ivir")]
 visible = false
+
+[node name="分层" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="猫猫勇者" parent="分层" instance=ExtResource("6_r2ht6")]
+position = Vector2(94, 342)
+
+[node name="小左初始" parent="分层" instance=ExtResource("4_r2ht6")]
+position = Vector2(971, 251)
+
+[node name="猫大初始" parent="分层" instance=ExtResource("5_s4ey6")]
+position = Vector2(1045, 251)
 
 [connection signal="area_entered" from="ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="ColorRect/Area2D2" to="." method="_on_area_2d_2_area_entered"]

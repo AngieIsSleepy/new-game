@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsddso632nlh3"]
+
+[ext_resource type="Script" uid="uid://dcom5b6jj0qsa" path="res://character/其他/宝箱3.gd" id="1_m0i3i"]
+[ext_resource type="Texture2D" uid="uid://c4crvrlssexxc" path="res://assets/通用素材/Chest.png" id="1_uiodg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwlrc"]
+atlas = ExtResource("1_uiodg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13o8a"]
+atlas = ExtResource("1_uiodg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4en8"]
+atlas = ExtResource("1_uiodg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0i3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwlrc")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13o8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4en8")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kknxw"]
+size = Vector2(72, 62)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vokpn"]
+radius = 14.0
+height = 42.0
+
+[node name="宝箱3" type="Node2D"]
+script = ExtResource("1_m0i3i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 24)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m0i3i")
+animation = &"closed"
+offset = Vector2(0, -12)
+
+[node name="Area2D" type="Area2D" parent="." groups=["Chest"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kknxw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vokpn")

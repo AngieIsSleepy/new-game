@@ -1,0 +1,5 @@
+join 猫大 right [mirrored="true"]
+猫大: 不过嘛。。。看在你之前这么喜欢按按钮的情况下。
+猫大: 这次我就帮你按了，不用谢谢我。
+猫大: 我反而该谢谢你才对呢。
+leave --All-- [animation="Fade Out" wait="true"]

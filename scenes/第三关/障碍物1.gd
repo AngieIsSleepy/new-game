@@ -7,7 +7,6 @@ func _process(delta: float) -> void:
 	if position.x < -100:         # 离开屏幕左边就销毁
 		queue_free()
 
-func _on_body_entered(body):
-	if body.name == "猫猫勇者":
-		print("玩家被撞到了！")
-		queue_free()
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		area.get_parent()._take_hit()

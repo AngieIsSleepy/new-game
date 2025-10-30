@@ -11,9 +11,7 @@ var pressed = false
 func _ready() -> void:
 	$"分层/猫猫勇者".visible = false
 	error_layer.visible = false
-	if Global.second_has_died:
-		print("玩家死过，跳过开场对话")
-	else:
+	if !Global.second_has_died:
 		Dialogic.start("第二关入场")
 
 func _on_bug_swich_pressed() -> void:
@@ -45,7 +43,7 @@ func _swap_to_alt_player() -> void:
 	
 	
 func _on_终点_area_entered(area: Area2D) -> void:
-	if !collected:
+	if !collected and area.is_in_group("Player"):
 		Dialogic.start("拿补丁")
 	if collected and area.is_in_group("Player"):
 		if pressed:

@@ -28,11 +28,11 @@
 },
 "小左变异": {
 "export_overrides": {
-"image": ""
+"image": "\"res://对话/角色/素材/小左变异.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(-100, -30),
+"scale": 0.2,
 "scene": ""
 }
 },

@@ -202,7 +202,7 @@ y_sort_enabled = true
 position = Vector2(0, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai8d7")
-animation = &"duck"
+animation = &"stand"
 offset = Vector2(-3.8146973e-06, -23.999996)
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]

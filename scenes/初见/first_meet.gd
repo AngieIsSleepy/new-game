@@ -3,20 +3,20 @@ extends Node2D
 var talk_done = false
 
 func _ready() -> void:
-	$"猫大初始".modulate.a = 0.0
-	$"小左初始".modulate.a = 0.0
-	$"猫大初始".enable_talkMD = false
-	$"猫大初始".enable_iconMD = false
+	$"分层/猫大初始".modulate.a = 0.0
+	$"分层/小左初始".modulate.a = 0.0
+	$"分层/猫大初始".enable_talkMD = false
+	$"分层/猫大初始".enable_iconMD = false
 
 func _fade_in_both() -> void:
 	# 并行启动两个淡入
-	_fade_in_side($"小左初始", -40.0, 0.9)
-	_fade_in_side($"猫大初始", 40.0, 0.9)
+	_fade_in_side($"分层/小左初始", -40.0, 0.9)
+	_fade_in_side($"分层/猫大初始", 40.0, 0.9)
 	# 淡入完成后再允许交互/图标
-	$"猫大初始".enable_talkMD = false
-	$"猫大初始".enable_iconMD = false
-	$"小左初始".enable_talkXZ = true
-	$"小左初始".enable_iconXZ = true
+	$"分层/猫大初始".enable_talkMD = false
+	$"分层/猫大初始".enable_iconMD = false
+	$"分层/小左初始".enable_talkXZ = true
+	$"分层/小左初始".enable_iconXZ = true
 
 func _fade_in_side(node: Node2D, dist, duration) -> void:
 	var target = node.position
@@ -24,7 +24,6 @@ func _fade_in_side(node: Node2D, dist, duration) -> void:
 	var start = target + Vector2(offset_x, 0)
 	node.position = start
 	node.modulate.a = 0.0
-
 	var tw := get_tree().create_tween()
 	tw.set_parallel(true)
 	tw.set_trans(Tween.TRANS_SINE)
