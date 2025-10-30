@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxjscndt2w5mn"]
+
+[ext_resource type="Texture2D" uid="uid://k7a5n8icfm6n" path="res://scenes/最终场景/素材/祭坛.png" id="1_8noh6"]
+[ext_resource type="Script" uid="uid://rjr5mxhpsk15" path="res://character/其他/祭坛.gd" id="1_hy232"]
+[ext_resource type="Texture2D" uid="uid://8gbcwanv1hb1" path="res://character/通用素材/感叹号.png" id="2_hy232"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhn8p"]
+size = Vector2(283, 245)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2rc2q"]
+radius = 38.0
+height = 140.0
+
+[sub_resource type="Animation" id="Animation_hy232"]
+resource_name = "感叹号"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("感叹号:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(622.00006, 88.000015), Vector2(622, 75), Vector2(622.00006, 88.000015)]
+}
+
+[sub_resource type="Animation" id="Animation_xhn8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("感叹号:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(622.00006, 88.000015)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rc2q"]
+_data = {
+&"RESET": SubResource("Animation_xhn8p"),
+&"感叹号": SubResource("Animation_hy232")
+}
+
+[node name="祭坛" type="Node2D"]
+script = ExtResource("1_hy232")
+
+[node name="祭坛" type="Sprite2D" parent="."]
+position = Vector2(623, 159)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_8noh6")
+
+[node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(623, 212)
+shape = SubResource("RectangleShape2D_xhn8p")
+
+[node name="感叹号" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(622.00006, 88.000015)
+scale = Vector2(3.4375, 2.9374998)
+texture = ExtResource("2_hy232")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(623, 212)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2rc2q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2rc2q")
+}
+autoplay = "感叹号"

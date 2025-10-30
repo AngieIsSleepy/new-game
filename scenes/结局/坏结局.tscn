@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://srhs1nocgkpr"]
+
+[ext_resource type="Script" uid="uid://bw11dbado8nrc" path="res://scenes/结局/坏结局.gd" id="1_456iw"]
+[ext_resource type="Texture2D" uid="uid://cvjl1genivs4b" path="res://scenes/结局/bad_end.png" id="2_777sp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckvel"]
+atlas = ExtResource("2_777sp")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5yyi"]
+atlas = ExtResource("2_777sp")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lf0j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckvel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5yyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="坏结局" type="Node2D"]
+script = ExtResource("1_456iw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_lf0j4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 455.0
+offset_top = 495.0
+offset_right = 755.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 24
+text = "感谢游玩喵
+点击任意处返回主菜单"
+horizontal_alignment = 1
+vertical_alignment = 1

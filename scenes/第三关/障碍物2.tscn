@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lb5oitfwq0hw" path="res://scenes/第三关/素材/block2.png" id="2_syqys"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0m1oa"]
-radius = 51.156624
+radius = 45.0
 
 [node name="障碍物2" type="Area2D"]
 script = ExtResource("1_syqys")
@@ -18,4 +18,4 @@ texture = ExtResource("2_syqys")
 position = Vector2(3, 4)
 shape = SubResource("CircleShape2D_0m1oa")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

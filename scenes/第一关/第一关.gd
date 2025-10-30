@@ -83,7 +83,7 @@ func use_bug():
 	Dialogic.start("图层之上")
 
 func _on_终点_area_entered(area: Area2D) -> void:
-	if !collected:
+	if !collected and area.is_in_group("Player"):
 		Dialogic.start("拿补丁")
 	if collected and area.is_in_group("Player"):
 		if pressed:
@@ -95,10 +95,10 @@ func _go_to_next_level():
 	var next_scene = "res://scenes/第二关/第二关.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
-	
+	get_tree().call_deferred("change_scene_to_file", next_scene)
+
 func _go_to_next_level_with_bug():
 	var next_scene = "res://scenes/通用/里世界2.tscn"
 	GameLoad.current_scene_path = next_scene
 	GameLoad.save_game()
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().call_deferred("change_scene_to_file", next_scene)

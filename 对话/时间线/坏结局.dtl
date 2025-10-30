@@ -1,0 +1,16 @@
+join 小左 (小左变异) left
+小左 (小左变异): 哈哈哈哈哈！
+leave --All-- [animation="Fade Out" wait="true"]
+join 猫大 (猫大变异) right [mirrored="true"]
+猫大 (猫大变异): 哈哈哈哈哈哈哈哈哈！
+leave --All-- [animation="Fade Out" wait="true"]
+join 小左 (小左变异) left
+小左 (小左变异): 真是得来全不费工夫。
+小左 (小左变异): 没想到这么顺利就完成了。
+leave --All-- [animation="Fade Out" wait="true"]
+join 猫大 (猫大变异) right [mirrored="true"]
+猫大 (猫大变异): 那家伙写的系统真是漏洞百出。
+leave --All-- [animation="Fade Out" wait="true"]
+join 小左 (小左变异) left
+小左 (小左变异): 感谢这个呆子，我们终于得到了尘封的力量.....
+leave --All-- [animation="Fade Out" wait="true"]

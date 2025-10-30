@@ -10,12 +10,22 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "alive",
 &"description": "",
 &"display_name": "开发者",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"alive": {
+"export_overrides": {
+"image": "\"res://对话/角色/素材/开发者对话.png\""
+},
+"mirror": true,
+"offset": Vector2(100, -30),
+"scale": 0.2,
+"scene": ""
+}
+},
 &"scale": 1.0
 }

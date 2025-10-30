@@ -31,9 +31,6 @@ texture = ExtResource("2_3bujx")
 [node name="开发者" parent="." instance=ExtResource("3_ipagc")]
 position = Vector2(924, 334)
 
-[node name="猫猫勇者" parent="." instance=ExtResource("5_ipagc")]
-position = Vector2(76, 403)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -60,3 +57,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="分层" type="Node2D" parent="."]
+
+[node name="猫猫勇者" parent="分层" instance=ExtResource("5_ipagc")]
+position = Vector2(76, 403)

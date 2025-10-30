@@ -1,0 +1,17 @@
+[style]
+join 猫大 right [mirrored="true"]
+猫大: 猫猫勇者，你的剧情已经结束了。
+猫大: 现在请你离开吧，我们会用这个道具修复游戏的。
+- 交出
+- 交出
+- 交出
+- 不交出
+	- 交出
+	- 交出
+- 交出
+- 交出
+- 交出
+[wait time="1.0"]
+[style name="红色特殊"]
+我可没说你有选择的余地。
+leave --All-- [animation="Fade Out" wait="true"]

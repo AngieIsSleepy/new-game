@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://nhctr7a3knfe"]
+
+[ext_resource type="Script" uid="uid://cka7yydj8g4sv" path="res://scenes/屏幕损坏/屏幕损坏.gd" id="1_ievgg"]
+[ext_resource type="Texture2D" uid="uid://2ymadhf8v7v4" path="res://scenes/结局/bad_end_scene.png" id="1_pw00v"]
+[ext_resource type="Texture2D" uid="uid://yy4y568enaxo" path="res://scenes/结局/bad_end_scene_button.png" id="3_6opit"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d4w3"]
+atlas = ExtResource("1_pw00v")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ievgg"]
+atlas = ExtResource("1_pw00v")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6opit"]
+atlas = ExtResource("1_pw00v")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b6qm"]
+atlas = ExtResource("1_pw00v")
+region = Rect2(3840, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eetc"]
+atlas = ExtResource("1_pw00v")
+region = Rect2(5120, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rri11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d4w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ievgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6opit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b6qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eetc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rri11"]
+atlas = ExtResource("3_6opit")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrd6w"]
+atlas = ExtResource("3_6opit")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhk61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rri11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrd6w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="屏幕损坏" type="Node2D"]
+script = ExtResource("1_ievgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_rri11")
+frame = 4
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_dhk61")
+autoplay = "default"
+frame_progress = 0.81102496

@@ -1,0 +1,15 @@
+extends Node2D
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+var opened = false
+
+func _ready() -> void:
+	anim.play("closed")
+	
+func open():
+	if opened == false:
+		opened = true
+		anim.play("open")
+		Dialogic.start("宝箱3打开")
+		await Dialogic.timeline_ended
+		Dialogic.start("第三关结束")
+		await Dialogic.timeline_ended

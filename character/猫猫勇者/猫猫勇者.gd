@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @export var speed = 200.0
 
+var talked = false
 var talk = false
 var in_talk = false
 var last_dir := Vector2.RIGHT
@@ -39,8 +40,9 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("up"):
 		dir.y -= 1
 
-	if talk and Input.is_action_just_pressed("interact"):
-		get_parent().talk()
+	if !talked and talk and Input.is_action_just_pressed("interact"):
+		get_parent().get_parent().talk()
+		talked = true
 		
 	if dir != Vector2.ZERO:
 		dir = dir.normalized()
@@ -68,13 +70,10 @@ func _physics_process(_delta):
 				
 				
 func _play_stand() -> void:
-	# 根据上次水平方向设置朝向
 	if last_dir.x != 0:
 		anim.flip_h = (last_dir.x < 0)
-	# 播放 stand（避免每帧重置）
 	if anim.animation != "stand" or not anim.is_playing():
-		# 如果你的 stand 是单帧，就把 speed_scale 设 0；如果是循环待机，设 1
-		anim.speed_scale = 1.0   # 单帧待机；如果是循环待机，改成 1.0
+		anim.speed_scale = 1.0
 		anim.play("stand")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -103,4 +102,4 @@ func _take_hit() -> void:
 	set_process_input(false)
 	set_physics_process(false)
 	await get_tree().create_timer(1.0).timeout
-	$"../死亡层".get_child(0).game_over()
+	$"../../死亡层".get_child(0).game_over()

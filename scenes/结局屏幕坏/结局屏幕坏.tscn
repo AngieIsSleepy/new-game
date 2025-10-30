@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://6p1buhtschl3"]
+
+[ext_resource type="Script" uid="uid://b80rljnslqg51" path="res://scenes/结局屏幕坏/结局屏幕坏.gd" id="1_okedb"]
+[ext_resource type="Texture2D" uid="uid://4phvdne26g4s" path="res://scenes/电脑屏幕/素材/电脑壁纸.png" id="2_ib031"]
+[ext_resource type="Texture2D" uid="uid://ddrab5t1fs5ve" path="res://scenes/结局/错误桌面.png" id="3_00v8b"]
+[ext_resource type="Texture2D" uid="uid://ddesmu5041x21" path="res://scenes/电脑屏幕/素材/图标1.png" id="3_bn2nk"]
+[ext_resource type="Texture2D" uid="uid://dpb3r360rkaok" path="res://scenes/电脑屏幕/素材/日志图标.png" id="4_wihpb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn2nk"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(6400, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wihpb"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(7680, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at4tg"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(8960, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxf6"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(10240, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqvae"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(11520, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imnux"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(12800, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqta4"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(14080, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isyt6"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uekf"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tchty"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye5bt"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(3840, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvejp"]
+atlas = ExtResource("3_00v8b")
+region = Rect2(5120, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i55v7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn2nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wihpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at4tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raxf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqvae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imnux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqta4")
+}],
+"loop": false,
+"name": &"brake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isyt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uekf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tchty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye5bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvejp")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
+[node name="结局屏幕坏" type="Node2D"]
+script = ExtResource("1_okedb")
+
+[node name="laptop_background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_ib031")
+
+[node name="猫猫王国图标" type="Sprite2D" parent="laptop_background"]
+position = Vector2(-498, -205)
+texture = ExtResource("3_bn2nk")
+
+[node name="日志图标" type="Sprite2D" parent="laptop_background"]
+position = Vector2(-498, -94)
+texture = ExtResource("4_wihpb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_i55v7")
+animation = &"brake"

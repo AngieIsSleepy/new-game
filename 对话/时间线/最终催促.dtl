@@ -1,0 +1,3 @@
+join 猫大 right [mirrored="true"]
+猫大: 你还在等什么呢？
+leave 猫大 [animation="Fade Out" wait="true"]
